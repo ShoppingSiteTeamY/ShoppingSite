@@ -260,8 +260,8 @@ input {
 <!-- form starts here -->
 <form class="sign-up">
     <h1 class="sign-up-title">Welcome!</h1>
-    <input type="text" class="sign-up-input" placeholder="ID" autofocus>
-    <input type="password" class="sign-up-input" placeholder="password">
+    <input type="text" name="member_no" class="sign-up-input" placeholder="ID" autofocus>
+    <input type="password" name="password" class="sign-up-input" placeholder="password">
     <input type="submit" value="Login" class="sign-up-button">
   </form>
 
