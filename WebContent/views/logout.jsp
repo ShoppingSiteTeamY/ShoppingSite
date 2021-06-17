@@ -149,7 +149,7 @@ body {
 	border-color: #dcdcdc;
 }
 
-.sign-up-title {
+.log-out-title {
 	margin: -25px -25px 25px;
 	padding: 15px 25px;
 	line-height: 35px;
@@ -161,7 +161,7 @@ body {
 	background: #f7f7f7;
 }
 
-.sign-up-title:before {
+.log-out-title:before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -181,7 +181,7 @@ input {
 	box-sizing: border-box;
 }
 
-.sign-up-input {
+.log-out-input {
 	width: 100%;
 	height: 50px;
 	margin-bottom: 25px;
@@ -194,18 +194,18 @@ input {
 	box-shadow: inset 0 -2px #ebebeb;
 }
 
-.sign-up-input:focus {
+.log-out-input:focus {
 	border-color: #62c2e4;
 	outline: none;
 	-webkit-box-shadow: inset 0 -2px #62c2e4;
 	box-shadow: inset 0 -2px #62c2e4;
 }
 
-.lt-ie9 .sign-up-input {
+.lt-ie9 .log-out-input {
 	line-height: 48px;
 }
 
-.sign-up-button {
+.log-out-button {
 	position: relative;
 	vertical-align: top;
 	width: 100%;
@@ -223,7 +223,7 @@ input {
 	box-shadow: inset 0 -2px #c0c0c0;
 }
 
-.sign-up-button:active {
+.log-out-button:active {
 	top: 1px;
 	outline: none;
 	-webkit-box-shadow: none;
@@ -255,9 +255,9 @@ input {
 
 <!-- form starts here -->
 <form class="log-out">
-    <h1 class="sign-up-title">logout</h1>
+    <h1 class="log-out-title">logout</h1>
     <div class="check_on"></div>
-    <input type="submit" value="TOP" class="sign-up-button">
+    <input type="submit" value="TOP" class="log-out-button">
   </form>
 
 <%@include file="../header.html"%>
