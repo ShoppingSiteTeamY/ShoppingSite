@@ -129,7 +129,6 @@ body {
 	background: white;
 	border-bottom: 1px solid #c4c4c4;
 	border-radius: 5px;
-	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
@@ -255,7 +254,7 @@ input {
 }</style>
 
 <!-- form starts here -->
-<form class="logout-up">
+<form class="log-out">
     <h1 class="sign-up-title">logout</h1>
     <div class="check_on"></div>
     <input type="submit" value="TOP" class="sign-up-button">
