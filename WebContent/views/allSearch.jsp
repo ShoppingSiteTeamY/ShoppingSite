@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" href="member.css">
 <style type="text/css">
 
 .container{
@@ -87,7 +86,7 @@ h1{
 	
 	width: 35%; /*親要素の45％分広げる*/
     padding: 20px 0px; /*ボックスを大きくする*/
-    margin:20px 0px;
+    margin:20px 0px 60px 430px;
     font-size: 25px;
     border-radius: 6px; /*ボックス角の丸み*/
     border: 4px solid #ddd; /*枠線*/
@@ -99,8 +98,8 @@ h1{
 .btn{
 	
 	width: 20%; /*親要素の45％分広げる*/
+	margin:0 auto;
     padding: 10px 0px; /*ボックスを大きくする*/
-    margin:10px 10px;
     font-size: 15px;
     border-radius: 4px; /*ボックス角の丸み*/
     border: 2px solid #ddd; /*枠線*/
@@ -109,18 +108,47 @@ h1{
 	
 }
 
-.box2 {
-    padding: 0.5em 1em;
-    margin: 2em 0;
+.box-wrapper {
+ 
+ 	position:relative;
+    width:40%;
+    margin: 20px 40px;
+    float:left;
+    padding: 40px 30px;
     font-weight: bold;
     color: black;/*文字色*/
     background: #FFF;
     border: solid 3px grey;/*線*/
     border-radius: 10px;/*角の丸み*/
+  
 }
 .box2 p {
+
     margin: 0; 
     padding: 5px 0;
+    z-index:4;
+}
+
+.box-wrapper{
+
+	margin-left:30px;
+
+}
+
+img{
+
+	width:200px;
+	height:200px;
+
+}
+
+.img-wrapper{
+
+	position:absolute;
+	top:30px;
+	right:30px;
+	z-index:5;
+	
 }
 
 
@@ -131,12 +159,18 @@ h1{
 <h1>商品情報一覧表示画面</h1>
 
 <c:forEach var="item" items="${itemBean}">
-    <div class="box2">
-		<p>商品ID：<c:out value="${item.item_no}"/></p>
-		<p>商品名：<c:out value="${item.item_name}"/></p>
-		<p>商品サイズ：<c:out value="${item.item_size}"/></p>
-		<p>色：<c:out value="${item.color}"/></p>
-		<p>価格：<c:out value="${item.price}"/></p>
+
+    <div class="box-wrapper">
+	    <div class="box2">
+			<p>商品ID：<c:out value="${item.item_no}"/></p>
+			<p>商品名：<c:out value="${item.item_name}"/></p>
+			<p>色：<c:out value="${item.color}"/></p>
+			<p>価格：<c:out value="${item.price}"/></p>
+			<p>商品ランキング：<c:out value="${item.ranking}"/>位</p>
+		</div>
+		
+		<div class="img-wrapper"><img src="${item.image}"></div>
+		
 	</div>
 </c:forEach>
 

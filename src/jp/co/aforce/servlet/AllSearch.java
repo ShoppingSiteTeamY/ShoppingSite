@@ -41,7 +41,7 @@ public class AllSearch extends HttpServlet {
 		} catch (Exception e) {
 
 			e.printStackTrace(out);
-			out.println("該当する会員情報が見つかりません。");
+			out.println("該当する商品情報が見つかりません。");
 		}
 		Page.footer(out);
 
