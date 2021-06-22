@@ -46,6 +46,7 @@ h1{
     border-radius: 6px; /*ボックス角の丸み*/
     border: 4px solid #ddd; /*枠線*/
     box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+    color:grey;
 }
 
 .select{
@@ -124,13 +125,17 @@ h1{
 <input type ="submit" class="btn" name="view" value="表示">
 <br>
 商品名(*)
-<input type = "text" class ="box" name="itemName" value="${itemBean[0].item_name}">
-サイズ(*)
-<input type = "text" class="box" name="itemSize" value="${itemBean[0].item_size}">
+<input type = "text" class ="box" name="itemName" value="${itemBean[0].item_name}" readonly>
 色(*)
-<input type = "text" class="box" name="itemColor" value="${itemBean[0].color}">
+<input type = "text" class="box" name="itemColor" value="${itemBean[0].color}" readonly>
 値段(*)
-<input type = "text" class="box" name="itemPrice" value="${itemBean[0].price}">
+<input type = "text" class="box" name="itemPrice" value="${itemBean[0].price}" readonly>
+ロケーションパス(*)
+<input type = "text" class="box" name="itemLocation" value="${itemBean[0].location}" readonly>
+画像パス(*)
+<input type = "text" class="box" name="itemImage" value="${itemBean[0].image}" readonly>
+人気順位(*)
+<input type = "text" class="box" name="itemRanking" value="${itemBean[0].ranking}" readonly>
 
 <!-- history.backを使う方法 -->
 <!-- button type="button" class="button" onclick="history.back()" name="back">戻る</button-->

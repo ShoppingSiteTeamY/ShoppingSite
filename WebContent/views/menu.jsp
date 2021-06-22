@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<link rel="stylesheet" href="member.css">
 <%@include file="../header.html" %>
 <style>
 @charset "UTF-8";
@@ -110,23 +109,49 @@ h1{
 	
 }
 
+.header-left{
 
+	position:absolute;
+	top:0px;
+	left:20px;
+    display:block;
+	text-align:left;
 
+}
 
+.header-right{
+
+	position:absolute;
+	top:20px;
+	right:40px;
+	display:block;
+	text-align:right;
+
+}
+
+a{
+    cursor: pointer;
+}
 
 </style>
+
+<h3 class="header-left">(ようこそ${loginBean.name}さん。)</h3>
+<a class="header-right" onclick="location.href='../jp.co.aforce.act/ShopLogout.action'">ログアウト</a>
+
 <div class=container>
 
+
 <div class="form">
-
+<br>
+<br>
+<br>
 <h1>管理者画面</h1>
-
 <form action="../src/allSearch" method="post">
 <button type="submit" class="click">商品情報一覧表示</button>
 </form>
-<button type="button" class="click" onclick="location.href='regist.jsp'">商品情報新規登録</button>
-<button type="button" class="click" onclick="location.href='update.jsp'">商品情報変更</button>
-<button type="button" class="click" onclick="location.href='delete.jsp'">商品情報削除</button>
+<button type="button" class="click" onclick="location.href='../views/regist.jsp'">商品情報新規登録</button>
+<button type="button" class="click" onclick="location.href='../views/update.jsp'">商品情報変更</button>
+<button type="button" class="click" onclick="location.href='../views/delete.jsp'">商品情報削除</button>
 
 </div>
 

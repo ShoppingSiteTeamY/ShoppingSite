@@ -3,33 +3,32 @@ package jp.co.aforce.bean;
 import java.io.Serializable;
 
 public class CartBean implements Serializable {
+	private int cart_no;
+	private ItemBean itemBean;
+	private int count;
 
-	private String cart_no;
-	private String member_no;
-	private String item_no;
-
-	public String getCart_no() {
+	public int getCart_no() {
 		return cart_no;
 	}
 
-	public void setCart_no(String cart_no) {
+	public void setCart_no(int cart_no) {
 		this.cart_no = cart_no;
 	}
 
-	public String getMember_no() {
-		return member_no;
+	public ItemBean getItemBean() {
+		return itemBean;
 	}
 
-	public void setMember_no(String member_no) {
-		this.member_no = member_no;
+	public void setItemBean(ItemBean itemBean) {
+		this.itemBean = itemBean;
 	}
 
-	public String getItem_no() {
-		return item_no;
+	public int getCount() {
+		return count;
 	}
 
-	public void setItem_no(String item_no) {
-		this.item_no = item_no;
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 }

@@ -6,9 +6,11 @@ public class ItemBean implements Serializable {
 
 	private String item_no;
 	private String item_name;
-	private String item_size;
 	private String color;
 	private int price;
+	private String location;
+	private String image;
+	private String ranking;
 
 	public String getItem_no() {
 		return item_no;
@@ -26,14 +28,6 @@ public class ItemBean implements Serializable {
 		this.item_name = item_name;
 	}
 
-	public String getItem_size() {
-		return item_size;
-	}
-
-	public void setItem_size(String item_size) {
-		this.item_size = item_size;
-	}
-
 	public String getColor() {
 		return color;
 	}
@@ -48,6 +42,30 @@ public class ItemBean implements Serializable {
 
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getRanking() {
+		return ranking;
+	}
+
+	public void setRanking(String ranking) {
+		this.ranking = ranking;
 	}
 
 }
