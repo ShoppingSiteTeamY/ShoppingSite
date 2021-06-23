@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java"
+	contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../header.html"%>
 <style>
@@ -61,60 +62,10 @@ table {
 	border-spacing: 0;
 }
 
-.about {
-	margin: 70px auto 40px;
-	padding: 8px;
-	width: 260px;
-	font: 10px/18px 'Lucida Grande', Arial, sans-serif;
-	color: #666;
-	text-align: center;
-	text-shadow: 0 1px rgba(255, 255, 255, 0.25);
-	background: #eee;
-	background: rgba(250, 250, 250, 0.8);
-	border-radius: 4px;
-	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0),
-		rgba(0, 0, 0, 0.1));
-	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0),
-		rgba(0, 0, 0, 0.1));
-	background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0),
-		rgba(0, 0, 0, 0.1));
-	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0),
-		rgba(0, 0, 0, 0.1));
-	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 0
-		1px rgba(255, 255, 255, 0.1), 0 0 6px rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 0 1px
-		rgba(255, 255, 255, 0.1), 0 0 6px rgba(0, 0, 0, 0.2);
-}
-
-.about a {
-	color: #333;
-	text-decoration: none;
-	border-radius: 2px;
-	-webkit-transition: background 0.1s;
-	-moz-transition: background 0.1s;
-	-o-transition: background 0.1s;
-	transition: background 0.1s;
-}
-
-.about a:hover {
-	text-decoration: none;
-	background: #fafafa;
-	background: rgba(255, 255, 255, 0.7);
-}
-
-.about-links {
-	height: 30px;
-}
-
-.about-links>a {
-	float: left;
-	width: 50%;
-	line-height: 30px;
-	font-size: 12px;
-}
-
-
-body {
+.container2 {
+	position: absolute;
+	top: 100px;
+	left: 480px;
 	font: 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #404040;
 	background: #ffffff;
@@ -123,7 +74,7 @@ body {
 .sign-up {
 	position: relative;
 	margin: 50px auto;
-	width: 280px;
+	width: 500px;
 	padding: 33px 25px 29px;
 	background: white;
 	border-bottom: 1px solid #c4c4c4;
@@ -170,7 +121,6 @@ body {
 	height: 8px;
 	background: #696969;
 	border-radius: 5px 5px 0 0;
-
 }
 
 input {
@@ -250,18 +200,401 @@ input {
 	border: 0;
 	padding: 0;
 }
-</style>
-<!-- header -->
-<hgroup class="heading">
-<h1 class="major">Login Form </h1>
-</hgroup>
 
-<!-- form starts here -->
-<form class="sign-up">
-    <h1 class="sign-up-title">Welcome!</h1>
-    <input type="text" name="member_no" class="sign-up-input" placeholder="ID" autofocus>
-    <input type="password" name="password" class="sign-up-input" placeholder="password">
-    <input type="submit" value="Login" class="sign-up-button">
-  </form>
+h4 {
+	text-align: center;
+	color: red;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
+		"メイリオ", Meiryo, sans-serif;
+}
+
+header, footer, nav, menu, article, aside, section, details, figcaption,
+	figure {
+	display: block;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+a img {
+	border: none;
+}
+
+strong {
+	font-weight: normal;
+}
+
+i {
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fff;
+	width: 100%;
+}
+
+header {
+	position: fixed;
+	height: 70px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	color: #000;
+	z-index: 5;
+}
+
+.sub {
+	padding-right: 10px;
+	color: #000;
+}
+
+.logo {
+	float: left;
+	width: 90px;
+	height: 65px;
+}
+
+.header-left {
+	float: left;
+	padding: 25px;
+}
+
+.header-right {
+	float: right;
+	padding: 25px;
+	margin-right: 5px;
+}
+
+.shop-wrapper {
+	position: fixed;
+	right: 0;
+	background-color: rgb(255, 255, 255);
+	z-index: 12;
+	width: 250px;
+	height: 600px;
+	text-align: center;
+	border: solid 2px #afafaf;
+	border-radius: 5px;
+}
+
+.cart {
+	display: none;
+}
+
+.total-quantity {
+	padding: 5px 3px;
+	margin: 10px 30px;
+	border: solid 2px #c4c4c4;
+}
+
+　.total-payment {
+	
+}
+
+.sub-total {
+	
+}
+
+.shipment {
+	padding: 10px 10px;
+	margin: 10px 20px;
+	color: #232323;
+	background: #ffffff;
+	border-bottom: solid 2px #9e9e9e;
+}
+
+.pay {
+	padding: 10px 10px;
+	margin: 10px 20px;
+	color: #232323;
+	background: #ffffff;
+	border-bottom: solid 2px #9e9e9e;
+}
+
+.method {
+	margin: 10px 20px;
+	color: #232323;
+	background: #ffffff;
+	border: solid 2px #9e9e9e;
+}
+
+#method {
+	
+}
+
+.top-bottom {
+	position: fixed;
+	top: 70px;
+	background-color: rgba(255, 255, 255, 1);
+	z-index: 4;
+	width: 100%;
+	height: 250px;
+	display: none;
+}
+
+.header-bottom1, .header-bottom2, .header-bottom3, .header-bottom4,
+	.header-bottom5, .header-bottom6 {
+	position: fixed;
+	top: 70px;
+	background-color: rgba(255, 255, 255, 1);
+	z-index: 7;
+	height: 250px;
+	display: none;
+}
+
+.header-detail {
+	margin-left: 120px;
+	width: 100%;
+	float: left;
+}
+
+.td {
+	color: #000;
+	display: inline-block;
+	padding: 7px 0;
+}
+
+.detail-form {
+	width: 60px;
+}
+
+.hm-wrapper {
+	position: absolute;
+	left: 400px;
+	width: 900px;
+	z-index: 6;
+}
+
+.hm-item {
+	width: 200px;
+	height: 110px;
+	float: left;
+	padding-right: 30px;
+	text-align: center;
+	color: #000;
+}
+
+.hm {
+	width: 130px;
+	height: 130px;
+}
+
+.container {
+	padding: 50px 20px;
+	width: 1200px;
+	margin: 0 auto;
+	height: 1800px;
+}
+
+.top-wrapper {
+	width: 1150px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+.item {
+	width: 270px;
+	margin: 0 7px;
+	float: left;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.sub-title {
+	font-size: 20px;
+	text-align: center;
+	color: #000;
+	font-weight: bold;
+}
+
+.number {
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 80px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.numbers {
+	color: #000;
+}
+
+.next-page {
+	height: 40px;
+	padding: 20px 0 80px 0;
+	margin: 20px;
+}
+
+footer {
+	height: 100px;
+	width: 100%;
+	background-color: #fff;
+	padding-top: 30px;
+}
+
+/*コピーライト　C　２０２１ WEAR HOUSE*/
+.footer-center {
+	padding-top: 100px;
+	padding-right: 30px;
+}
+
+.footer-center p {
+	text-align: center;
+	font-size: 8px;
+}
+
+/*サインアップ*/
+.footer-left {
+	float: left;
+}
+
+.input {
+	margin: 20px;
+	padding: 20px;
+}
+
+/*FontAwesomeを利用したリンク*/
+.footer-right {
+	float: right;
+}
+
+.fab {
+	padding-top: 20px;
+	padding-right: 15px;
+	margin: 20px;
+	font-size: 30px;
+	color: #000;
+}
+
+.footer-line {
+	height: 50px;
+	background-color: #fff;
+}
+
+/*写真にカーソルを合わせると値段が表示される*/
+.price {
+	font-weight: normal;
+	color: #000;
+	opacity: 0;
+}
+
+.hm-price {
+	font-weight: normal;
+	color: #000;
+	opacity: 0;
+}
+
+img:hover {
+	opacity: 0.7;
+}
+
+.item:hover .price {
+	opacity: 0.9;
+	transition: 1s;
+}
+
+.hm-item:hover .hm-price {
+	opacity: 0.9;
+	transition: 1s;
+}
+
+/*リンク先のアンダーライン*/
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	width: 260px;
+	height: 270px;
+}
+</style>
+
+
+
+<header>
+
+	<div class="header-logo">
+
+		<img src="image/T-logo.png" class="logo">
+
+		<div class="header-left">
+
+			<a href="../views/login-error.jsp" class="sub"
+				id="M">MEN'S</a> <a
+				href="../views/login-error.jsp" class="sub"
+				id="W">WOMEN'S</a> <a
+				href="../views/login-error.jsp" class="sub"
+				id="A">ACCESSORIES</a> <a
+				href="../views/login-error.jsp" class="sub"
+				id="C">COLLECTIONS</a>
+
+		</div>
+
+		<div class="header-right">
+
+			<a href="../views/login-error.jsp" class="sub">SEARCH</a>
+			<a href="../views/login-error.jsp" class="sub">ACCOUNT</a>
+			<a href="../views/login-error.jsp" class="sub">MAP</a>
+			<a href="../views/login-error.jsp" class="sub">SHOPPING
+				BAG</a> <a href="../views/login-error.jsp"
+				class="sub">LOG OUT</a>
+
+		</div>
+
+	</div>
+
+</header>
+<div class="wrapper">
+	<div class="container2">
+
+		<hgroup class="heading">
+			<h1 class="major">Login Form</h1>
+		</hgroup>
+
+		<!-- form starts here -->
+		<form action="../jp.co.aforce.act/ShopLogin.action" class="sign-up" method="post">
+
+			<h1 class="sign-up-title">Welcome to Shop!</h1>
+			<input type="text" name="member_no"
+				class="sign-up-input" placeholder="ID"
+				autofocus> 
+			<input type="password" name="password" class="sign-up-input" placeholder="password"> 
+			
+			<input type="submit" value="Login" class="sign-up-button">
+
+		</form>
+	</div>
+</div>
+
+
+
 
 <%@include file="../footer.html"%>

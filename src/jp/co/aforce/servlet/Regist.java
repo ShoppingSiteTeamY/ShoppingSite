@@ -30,11 +30,12 @@ public class Regist extends HttpServlet {
 
 			String item_no = request.getParameter("itemNo");
 			String item_name = request.getParameter("itemName");
-			String item_size = request.getParameter("itemSize");
 			String color = request.getParameter("itemColor");
+			String location = request.getParameter("itemLocation");
+			String image = request.getParameter("itemImage");
+			String ranking = request.getParameter("itemRanking");
 			
-			//入力チェッカー(詳細は省略)
-			if (item_no.isEmpty() || item_name.isEmpty() || item_size.isEmpty() || color.isEmpty() || request.getParameter("itemPrice").isEmpty()) {
+			if (item_no.isEmpty() || item_name.isEmpty() ||  color.isEmpty() || request.getParameter("itemPrice").isEmpty() || location.isEmpty() || image.isEmpty() || ranking.isEmpty()){
 				out.println("入力されていない項目があります。");
 				return;
 			}
@@ -45,9 +46,11 @@ public class Regist extends HttpServlet {
 			
 			i.setItem_no(item_no);
 			i.setItem_name(item_name);
-			i.setItem_size(item_size);
 			i.setColor(color);
 			i.setPrice(price);
+			i.setLocation(location);
+			i.setImage(image);
+			i.setRanking(ranking);
 			
 
 			ItemDAO dao = new ItemDAO();
@@ -56,13 +59,14 @@ public class Regist extends HttpServlet {
 			if (line > 0) {
 
 				out.println("登録に成功しました。");
+				out.println("<button type=\"button\" class=\"button\" onclick=\"location.href='menu.jsp'\" name=\"back\">戻る</button>");
 
 			}
 
 		} catch (Exception e) {
 
 			//データのエラー調整用
-			//e.printStackTrace(out);
+			e.printStackTrace(out);
 			out.println("登録に失敗しました。");
 
 		}

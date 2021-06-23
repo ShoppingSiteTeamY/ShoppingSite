@@ -104,12 +104,16 @@ h1 {
 <br>
 商品名(*)
 <input type = "text" class ="box" name="itemName" value="${itemBean[0].item_name}">
-サイズ(*)
-<input type = "text" class="box" name="itemSize" value="${itemBean[0].item_size}">
 色(*)
 <input type = "text" class="box" name="itemColor" value="${itemBean[0].color}">
 値段(*)
 <input type = "text" class="box" name="itemPrice" value="${itemBean[0].price}">
+ロケーションパス(*)
+<input type = "text" class="box" name="itemLocation" value="${itemBean[0].location}">
+画像パス(*)
+<input type = "text" class="box" name="itemImage" value="${itemBean[0].image}">
+人気順位(*)
+<input type = "text" class="box" name="itemRanking" value="${itemBean[0].ranking}">
 
 <!-- history.backを使う方法 -->
 <!-- button type="button" class="button" onclick="history.back()" name="back">戻る</button-->

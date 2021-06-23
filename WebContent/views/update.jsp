@@ -104,12 +104,16 @@ h1 {
 <br>
 商品名(*)
 <input type = "text" class ="box" name="itemName">
-サイズ(*)
-<input type = "text" class="box" name="itemSize">
 色(*)
 <input type = "text" class="box" name="itemColor">
 値段(*)
 <input type = "text" class="box" name="itemPrice">
+ロケーションパス(*)
+<input type = "text" class="box" name="itemLocation">
+画像パス(*)
+<input type = "text" class="box" name="itemImage">
+人気順位(*)
+<input type = "text" class="box" name="itemRanking">
 	<!-- history.backを使う方法 -->
 	<!-- button type="button" class="button" onclick="history.back()" name="back">戻る</button-->
 	<button type="button" class="button" onclick="location.href='menu.jsp'" name="back">戻る</button>
