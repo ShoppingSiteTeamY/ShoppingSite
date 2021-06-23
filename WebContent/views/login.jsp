@@ -543,7 +543,7 @@ img {
 
 	<div class="header-logo">
 
-		<img src="image/T-logo.png" class="logo">
+		<img src="../views/image/T-logo.png" class="logo">
 
 		<div class="header-left">
 

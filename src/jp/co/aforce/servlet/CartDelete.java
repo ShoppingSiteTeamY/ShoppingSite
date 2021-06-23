@@ -15,8 +15,8 @@ import jp.co.aforce.bean.CartBean;
 import jp.co.aforce.bean.LoginBean;
 import jp.co.aforce.tool.Page;
 
-@WebServlet(urlPatterns = { "/src/cartInsert" })
-public class CartInsert extends HttpServlet {
+@WebServlet(urlPatterns = { "/src/cartDelete" })
+public class CartDelete extends HttpServlet {
 
 	public void doPost(
 
@@ -40,7 +40,7 @@ public class CartInsert extends HttpServlet {
 			
 			CartBean cart = dao.search(itemNo);
 			
-			int line = dao.cartInsert(cart, loginBean.getMember_no(),loginBean.getName());
+			int line = dao.cartDelete(cart, loginBean.getMember_no(),loginBean.getName());
 			
 			if (line > 0) {
 

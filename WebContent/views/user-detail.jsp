@@ -74,8 +74,11 @@
 
   .sub{
 
-   padding-right:10px ;
-
+    margin:0px 10px;
+    padding: 3px 10px;
+    background-color:#fff;
+    border-radius:4px;
+    color: #000;
 
   }
 
@@ -319,6 +322,11 @@ img:hover{
 
 }
 
+.vanish{
+
+   display:none;
+}
+
 
 </style>
 <body>
@@ -327,25 +335,28 @@ img:hover{
          
         <div class="header-logo">
 
-          <a onclick="location.href='../views/user.jsp'"><img src="../views/image/T-logo.png" class="logo"></a>
+          <form action="../src/UserAllSearch" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form>
 
-          <div class="header-left">
-          
-            <a href="#" class="sub">MEN'S</a>
-            <a href="#" class="sub">WOMEN'S</a>
-            <a href="#" class="sub">ACCESSORIES</a>
-            <a href="#" class="sub">COLLECTIONS</a>
+          <div class="header-left" style="display:inline-flex">
+            
+	             <form action="#" method="post" ><a href="#" class="sub" id="M">RECOMMEND</a></form>
+	             <form action="../src/ranking" method="post"><input type="submit" class="sub" id="W" value="RANKING"></form>
+	             <form action="../src/lowPrice" method="post"><input type="submit" class="sub" id="A" value="LOW PRICE"></form>
+	             <form action="../src/highPrice" method="post"><input type="submit" class="sub" id="C"value="HIGH PRICE"></form>
+                 
+           </div>
 
-          </div>
+           <div class="header-right" style="display:inline-flex">
 
-          <div class="header-right">
+　　　　　　　      <form action="../src/keyWord" method="post" class="#">
+					<input type="text" class="#" name="keyword" placeholder="Input any words!">
+					<input type="submit" class="sub" value="SEARCH">
+				 </form>
+				 <form action="#" method="post"><input type="submit" class="sub" id="map" value="MAP"></form>
+	             <form action="#" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form>
+	             <a href="../views/logout-out.jsp" class="sub">LOG OUT</a>     
 
-            <a href="#" class="sub">SEARCH</a>
-            <a href="#" class="sub">ACCOUNT</a>
-            <a href="T-s.map.html" class="sub">MAP</a>
-            <a href="#" class="sub">SHOPPING BAG</a>
-
-          </div>
+           </div>
 
         </div>
 
@@ -363,7 +374,7 @@ img:hover{
           <p>¥9,480(税込)</p>
           <div class="small-wrapper">
             <a onclick="location.href='../views/user-detail.jsp'"><img src="../views/image/t1.jpeg" class="small"></a>
-            <a onclick="location.href='../views/user-detail-a.jsp'"><img src="../views/image/t1a.jpeg"class="small"></a>
+           <!--  <a onclick="location.href='../views/user-detail-a.jsp'"><img src="../views/image/t1a.jpeg"class="small"></a> -->
           </div>
           
           <div class="size-wrapper">
@@ -375,16 +386,19 @@ img:hover{
 　　　　　　　
           <div class="btn-wrapper">
             <form action="../src/cartInsert" method="post" id="wrap">
-            <input type="text" placeholder="数量" class="quan" name="quantity">
-            <input type="submit" class="btn" value="カートに入れる">
-            <input type="reset" value="Reset">
+            	<input type="text" class="vanish" name="itemNo" value="T00001">
+            	<input type="submit" class="btn" value="カートに入れる">
+            </form>
+            <form action="../src/cartDelete" method="post" id="wrap">
+            	<input type="text" class="vanish" name="itemNo" value="T00001">
+            	<input type="submit" class="#" value="カートから削除">
             </form>
           </div>
 
-          <div class="output-box">
+          <!-- <div class="output-box">
           <p id="output"></p>
           <p id="total">
-          </div>
+          </div> -->
      
           <p>100% レーヨン</p>
           <p>インポート</p>
@@ -459,7 +473,7 @@ img:hover{
        <div class="footer-line">
     
        </div>
-    <script>
+    <!-- <script>
       'use strict'
 
       function totalPrice(inputInt){
@@ -489,7 +503,7 @@ img:hover{
   
 
 
-    </script>
+    </script> -->
     
 </body>
 </html>

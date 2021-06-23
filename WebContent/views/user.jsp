@@ -68,8 +68,8 @@
 
   .sub{
 
-    margin:0px 5px;
-    padding: 2px 10px;
+    margin:0px 10px;
+    padding: 3px 10px;
     background-color:#fff;
     border-radius:4px;
     color: #000;
@@ -425,6 +425,8 @@
 
     width: 260px;
     height:270px;
+    
+    
 
   }
 
@@ -542,29 +544,33 @@ $(function(){
          
         <div class="header-logo">
 
-           <img src="../views/image/T-logo.png" class="logo">
+           <form action="../src/UserAllSearch" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form>
 
            <div class="header-left" style="display:inline-flex">
             
 	             <form action="#" method="post" ><a href="#" class="sub" id="M">RECOMMEND</a></form>
-	             <p>SORT  (</p>
 	             <form action="../src/ranking" method="post"><input type="submit" class="sub" id="W" value="RANKING"></form>
 	             <form action="../src/lowPrice" method="post"><input type="submit" class="sub" id="A" value="LOW PRICE"></form>
 	             <form action="../src/highPrice" method="post"><input type="submit" class="sub" id="C"value="HIGH PRICE"></form>
-                 <p>  )</p>
+                 
            </div>
 
-           <div class="header-right">
+           <div class="header-right" style="display:inline-flex">
 
-　　　　　　　 <a href="#" class="sub">SEARCH</a>
-            <a href="#" class="sub">ACCOUNT</a>
-            <a href="#" class="sub">MAP</a>
-            <a href="#" class="sub" id=bag>SHOPPING BAG</a>
-            <a href="../views/logout-out.jsp" class="sub">LOG OUT</a>
+　　　　　　　      <form action="../src/keyWord" method="post" class="#">
+					<input type="text" class="#" name="keyword" placeholder="Input any words!">
+					<input type="submit" class="sub" value="SEARCH">
+				 </form>
+				 <form action="#" method="post"><input type="submit" class="sub" id="map" value="MAP"></form>
+	             <form action="#" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form>
+	             <a href="../views/logout-out.jsp" class="sub">LOG OUT</a>
+                  
+	            
+	           
 
-          </div>
+           </div>
 
-        </div>
+       </div>
 
     </header>
 

@@ -9,35 +9,33 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import jp.co.aforce.DAO.ItemDAO;
 import jp.co.aforce.bean.ItemBean;
 import jp.co.aforce.tool.Page;
 
-@WebServlet(urlPatterns = { "/src/allSearch" })
-public class AllSearch extends HttpServlet {
+@WebServlet(urlPatterns = { "/src/keyWord" })
+public class KeyWordSearch extends HttpServlet {
 
 	public void doPost(
 
 			HttpServletRequest request, HttpServletResponse response
 
 	) throws ServletException, IOException {
-		
-		HttpSession session = request.getSession();
 
 		PrintWriter out = response.getWriter();
 
 		Page.header(out);
 
 		try {
-
+			String keyword = request.getParameter("keyword");
+			
 			ItemDAO dao = new ItemDAO();
 
-			List<ItemBean> itemBean = dao.allSearch();
+			List<ItemBean> itemBean = dao.wordSearch(keyword);
 
-				session.setAttribute("itemBean", itemBean);
-				request.getRequestDispatcher("../views/allSearch.jsp").forward(request, response);
+				request.setAttribute("itemBean", itemBean);
+				request.getRequestDispatcher("../views/user.jsp").forward(request, response);
 			
 			
 
