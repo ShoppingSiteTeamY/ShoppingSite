@@ -14,6 +14,8 @@ public class CartBean implements Serializable {
 	private String name;
 	private int age;
 	private String password;
+	private String item_size;
+	private int item_quantity;
 
 	public String getMember_no() {
 		return member_no;
@@ -101,6 +103,22 @@ public class CartBean implements Serializable {
 
 	public void setCart_no(int cart_no) {
 		this.cart_no = cart_no;
+	}
+
+	public String getItem_size() {
+		return item_size;
+	}
+
+	public void setItem_size(String item_size) {
+		this.item_size = item_size;
+	}
+
+	public int getItem_quantity() {
+		return item_quantity;
+	}
+
+	public void setItem_quantity(int item_quantity) {
+		this.item_quantity = item_quantity;
 	}
 
 	

@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@include file="../header.html"%>
+
 <style>
 @charset "utf-8";
 
 .container {
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -80,15 +80,11 @@ img, .basket-module, .basket-labels, .basket-product {
 }
 
 input, button, .basket, .basket-module, .basket-labels, .item, .price,
-	.quantity, .subtotal, .basket-product, .product-image, .product-details
+	.quantity, .size,.subtotal, .basket-product, .product-image, .product-details
 	{
 	float: left;
 }
 
-.price:before, .subtotal:before, .subtotal-value:before, .total-value:before,
-	.promo-value:before {
-	content: '£';
-}
 
 .hide {
 	display: none;
@@ -150,19 +146,20 @@ li.price:before, li.subtotal:before {
 	width: 55%;
 }
 
-.price, .quantity, .subtotal {
-	width: 15%;
+.price, .quantity, .size, .subtotal {
+	width: 10%;
 }
 
 .subtotal {
-	text-align: right;
+	text-align: left;
+	margin-left:20px;
 }
 
 .remove {
-	bottom: 1.125rem;
+	bottom: 10px;
 	float: right;
 	position: absolute;
-	right: 0;
+	right: -30px;
 	text-align: right;
 	width: 45%;
 }
@@ -176,11 +173,13 @@ li.price:before, li.subtotal:before {
 }
 
 .item-heading {
-	padding-left: 4.375rem;
+	
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	float:left;
 }
+
 
 .basket-product {
 	border-bottom: 1px solid #ccc;
@@ -208,7 +207,7 @@ li.price:before, li.subtotal:before {
 }
 
 .quantity-field {
-	background-color: #ccc;
+	background-color: #fff;
 	border: 1px solid #aaa;
 	border-radius: 4px;
 	font-size: 0.625rem;
@@ -310,7 +309,7 @@ li.price:before, li.subtotal:before {
 	.product-details {
 		width: 60%;
 	}
-	.price, .subtotal {
+	.price, .subtotal ,.name{
 		width: 33%;
 	}
 	.quantity {
@@ -352,65 +351,166 @@ li.price:before, li.subtotal:before {
 		padding: 0 1rem;
 	}
 }
+
+.vanish{
+
+   display:none;
+}
+
+.space{
+   
+   margin-left:145px;
+
+}
+
+
+  header{
+
+    position: fixed;
+    height:70px;
+    width: 100%;
+    background-color:rgba(255,255,255,0.7);
+    color: #000;
+    z-index:5;
+
+  }
+
+  .sub{
+
+    margin:0px 10px;
+    padding: 3px 10px;
+    background-color:#fff;
+    border-radius:4px;
+    color: #000;
+
+  }
+
+  .logo{
+
+    float: left;
+    width: 90px;
+    height: 65px;
+
+  }
+
+  .header-left{
+
+    float: left;
+    padding: 25px;
+
+  }
+
+  .header-right{
+
+    float: right;
+    padding: 25px;
+    margin-right: 5px;
+
+  }
+
+
 </style>
 
+
 <header>
-	<input type="button" value="user" onClick="location.href='../views/user.jsp'"> 
-	<input type="button" value="logout" onClick="location.href='../views/logout.jsp'">
-</header>
+       
+      <div class="header-logo">
+
+         <form action="../src/UserAllSearch" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form>
+
+         <div class="header-left" style="display:inline-flex">
+          
+           <!--  <form action="#" method="post" ><a href="#" class="sub" id="M">RECOMMEND</a></form>
+            <form action="../src/ranking" method="post"><input type="submit" class="sub" id="W" value="RANKING"></form>
+            <form action="../src/lowPrice" method="post"><input type="submit" class="sub" id="A" value="LOW PRICE"></form>
+            <form action="../src/highPrice" method="post"><input type="submit" class="sub" id="C"value="HIGH PRICE"></form> -->
+               
+         </div>
+
+         <div class="header-right" style="display:inline-flex">
+
+　　　　　　　      <!-- <form action="../src/keyWord" method="post" class="#">
+					<input type="text" class="#" name="keyword" placeholder="Input any words!">
+					<input type="submit" class="sub" value="SEARCH">
+				 </form>
+				 <form action="#" method="post"><input type="submit" class="sub" id="map" value="MAP"></form>
+	             <form action="../src/cart" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form> -->
+	             <a href="../views/logout-out.jsp" class="sub">LOG OUT</a>
+  
+         </div>
+
+     </div>
+
+ </header>
+	
 
 <main>
 	<div class="container">
 		<div class="cart">
-			<p>Cart</p>
+			<p>Shopping Cart</p>
 		</div>
+		
+		<c:set var="sum_price" value="${0}" />
+			
+		<c:forEach var="cart" items="${cartBean}" >
+		
+		<c:set var="total" value="${cart.price*cart.item_quantity}" />
+		
 		<div class="basket">
-
-
 			<div class="basket-labels">
 				<ul>
-					<li class="item item-heading">Item</li>
+					<li class="item item-heading">Item image<span class="space">Item detail</span></li>
 					<li class="price">Price</li>
-					<li class="quantity">quantity</li>
+					<li class="size">Size</li>
+					<li class="quantity">Quantity</li>
 					<li class="subtotal">Subtotal</li>
 				</ul>
 			</div>
-			
-		<c:forEach items="${cartBean}">
+		
 			<div class="basket-product">
 				<div class="item">
 					<div class="product-image">
-						<img src="${items.item_no}" alt="image"
+						<img src="${cart.image}" alt="image"
 							class="product-frame">
 					</div>
 					<div class="product-details">
 						<h1>
-							<strong>item:<c:out value="${items.item_no}" /></strong>
+							商品名 : <strong><c:out value="${cart.item_name}" /></strong>
 						</h1>
-						<p>Size：<c:out value="${items.item_size}"/></p>
-						<p>Color：<c:out value="${items.color}"/></p>
+						<%-- <p>Size：<c:out value="${items.item_size}"/></p> --%>
+						<p>色 : <strong><c:out value="${cart.color}" /></strong>
 					</div>
 				</div>
-				<div class="price"><c:out value="${items.price}"/>¥</div>
-				<div class="quantity">
-					<input type="number" class="quantity-field">
+				<div class="price">¥<c:out value="${cart.price}"/></div>
+				<div class="size">
+					
+						<c:out value="${cart.item_size}"/>
+					
 				</div>
-				<div class="subtotal"><c:out value="${items.price*quantity}"/>¥</div>
+				<div class="quantity">
+					個数: <c:out value="${cart.item_quantity}"/>
+				</div>
+				 <div class="subtotal">
+				    小計: ¥<c:out value="${total}"/>	 
+				 </div>
+				
 				<div class="remove">
-					<form action="deletecart" method="post" class="remove">
-						<input type="submit" value="Remove">
+					<form action="../src/cartDelete" method="post" id="wrap" class="remove">
+		            	<input type="text" class="vanish" name="itemNo" value="${cart.item_no}">
+		            	<input type="text" class="vanish" name="item_size" value="${cart.item_size}">
+		            	<input type="text" class="vanish" name="item_quantity" value="${cart.item_quantity}">
+		            	<input type="submit" class="#" value="カートから削除">
 					</form>
 				</div>
 			</div>
-		</div>
+		 </div>
+	      <c:set var="sum_price" value="${sum_price + total}" />
+		 
 		</c:forEach>
 
-		<div class="summary-total-items">
-			<span class="total-items"></span>your Cart
-		</div>
 		<div class="summary-total">
 			<div class="total-title">Total</div>
-			<div class="total-value final-value" id="basket-total"></div>
+			<div class="total-value final-value" id="basket-total">¥<c:out value="${sum_price}"/></div>
 		</div>
 		<div class="summary-checkout">
 			<button class="checkout-cta">Checkout</button>
@@ -420,7 +520,7 @@ li.price:before, li.subtotal:before {
 
 
 
-<c:forEach var="item" items="${itemBean}" begin="0" end="19">
+<%-- <c:forEach var="item" items="${itemBean}" begin="0" end="19">
 				<div class="item">
 					<a onclick="location.href='${item.location}'"><img
 						src="${item.image}" class="t"></a>
@@ -432,6 +532,6 @@ li.price:before, li.subtotal:before {
 						<c:out value="${item.price}" />
 					</p>
 				</div>
-</c:forEach>
+</c:forEach> --%>
 
 <%@include file="../footer.html"%>

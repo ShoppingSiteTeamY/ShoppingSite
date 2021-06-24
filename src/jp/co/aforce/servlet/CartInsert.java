@@ -35,24 +35,29 @@ public class CartInsert extends HttpServlet {
 			LoginBean loginBean=(LoginBean)session.getAttribute("loginBean");
 
 			String itemNo = request.getParameter("itemNo");
+			String item_size = request.getParameter("item_size");
+			int item_quantity = Integer.parseInt(request.getParameter("item_quantity"));
 		
 			CartDAO dao = new CartDAO();
 			
 			CartBean cart = dao.search(itemNo);
+			cart.setItem_size(item_size);
+			cart.setItem_quantity(item_quantity);
 			
 			int line = dao.cartInsert(cart, loginBean.getMember_no(),loginBean.getName());
 			
 			if (line > 0) {
 
-				out.println("カートへの追加に成功しました。");
+//				out.println("カートへの追加に成功しました。");
+				request.getRequestDispatcher("../views/user-detail.jsp").forward(request, response);
 
 			}
 
 		} catch (Exception e) {
 
 			//データのエラー調整用
-			e.printStackTrace(out);
-			out.println("カートへの追加に失敗しました。");
+			//e.printStackTrace(out);
+//			out.println("カートへの追加に失敗しました。");
 
 		}
 		Page.footer(out);

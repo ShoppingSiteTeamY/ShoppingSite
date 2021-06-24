@@ -548,7 +548,7 @@ $(function(){
 
            <div class="header-left" style="display:inline-flex">
             
-	             <form action="#" method="post" ><a href="#" class="sub" id="M">RECOMMEND</a></form>
+	             <form action="#" method="post" ><input type="submit" class="sub" id="M" value="RECOMMEND"></form>
 	             <form action="../src/ranking" method="post"><input type="submit" class="sub" id="W" value="RANKING"></form>
 	             <form action="../src/lowPrice" method="post"><input type="submit" class="sub" id="A" value="LOW PRICE"></form>
 	             <form action="../src/highPrice" method="post"><input type="submit" class="sub" id="C"value="HIGH PRICE"></form>
@@ -562,8 +562,9 @@ $(function(){
 					<input type="submit" class="sub" value="SEARCH">
 				 </form>
 				 <form action="#" method="post"><input type="submit" class="sub" id="map" value="MAP"></form>
-	             <form action="#" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form>
-	             <a href="../views/logout-out.jsp" class="sub">LOG OUT</a>
+	             <form action="../src/cart" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form>
+	             <form action="../views/logout-out.jsp" method="post"><input type="submit" class="sub" id="bag" value="LOG OUT"></form>
+	            
                   
 	            
 	           
@@ -574,7 +575,7 @@ $(function(){
 
     </header>
 
-    <div id="shop" class="cart">
+    <%-- <div id="shop" class="cart">
 
       <div class="shop-wrapper">
 
@@ -614,7 +615,7 @@ $(function(){
 
       </div>
 
-    </div>
+    </div> --%>
 
     <div id="topb" class="top-bottom">
 

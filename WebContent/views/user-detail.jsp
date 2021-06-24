@@ -317,7 +317,7 @@ img:hover{
  border:2px solid grey;
  margin-bottom:5px;
  margin-right:5px;
- padding:15px;
+ padding:5px;
 
 
 }
@@ -327,19 +327,27 @@ img:hover{
    display:none;
 }
 
+.size {
+	background-color: #fff;
+	border: 1px solid #aaa;
+	border-radius: 4px;
+	font-size: 0.625rem;
+	padding: 2px;
+	width: 3.75rem;
+}
 
 </style>
 <body>
 
-    <header>
+     <header>
          
         <div class="header-logo">
 
-          <form action="../src/UserAllSearch" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form>
+           <form action="../src/UserAllSearch" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form>
 
-          <div class="header-left" style="display:inline-flex">
+           <div class="header-left" style="display:inline-flex">
             
-	             <form action="#" method="post" ><a href="#" class="sub" id="M">RECOMMEND</a></form>
+	             <form action="#" method="post" ><input type="submit" class="sub" id="M" value="RECOMMEND"></form>
 	             <form action="../src/ranking" method="post"><input type="submit" class="sub" id="W" value="RANKING"></form>
 	             <form action="../src/lowPrice" method="post"><input type="submit" class="sub" id="A" value="LOW PRICE"></form>
 	             <form action="../src/highPrice" method="post"><input type="submit" class="sub" id="C"value="HIGH PRICE"></form>
@@ -353,12 +361,16 @@ img:hover{
 					<input type="submit" class="sub" value="SEARCH">
 				 </form>
 				 <form action="#" method="post"><input type="submit" class="sub" id="map" value="MAP"></form>
-	             <form action="#" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form>
-	             <a href="../views/logout-out.jsp" class="sub">LOG OUT</a>     
+	             <form action="../src/cart" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form>
+	             <form action="../views/logout-out.jsp" method="post"><input type="submit" class="sub" id="bag" value="LOG OUT"></form>
+	            
+                  
+	            
+	           
 
            </div>
 
-        </div>
+       </div>
 
     </header>
 
@@ -377,23 +389,40 @@ img:hover{
            <!--  <a onclick="location.href='../views/user-detail-a.jsp'"><img src="../views/image/t1a.jpeg"class="small"></a> -->
           </div>
           
-          <div class="size-wrapper">
-            <a href="#" class="size">S</a>
-            <a href="#" class="size">M</a>
-            <a href="#" class="size">L</a>
-            <a href="#" class="size">LL</a>
-          </div>
+           <form action="../src/cartInsert" method="post" id="wrap">
+          
+          	<div class="size-wrapper">
+          
+          			サイズ: <select name="item_size" class="size">
+						<option value="S">S</option>
+						<option value="M">M</option>
+						<option value="L">L</option>
+						<option value="LL">LL</option>
+					</select>
+					
+					個数: <select name="item_quantity" class="size">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+           
+          	</div>
 　　　　　　　
-          <div class="btn-wrapper">
-            <form action="../src/cartInsert" method="post" id="wrap">
+          	<div class="btn-wrapper">
+           
             	<input type="text" class="vanish" name="itemNo" value="T00001">
             	<input type="submit" class="btn" value="カートに入れる">
+            	
+           </div>
+           
             </form>
-            <form action="../src/cartDelete" method="post" id="wrap">
-            	<input type="text" class="vanish" name="itemNo" value="T00001">
-            	<input type="submit" class="#" value="カートから削除">
-            </form>
-          </div>
 
           <!-- <div class="output-box">
           <p id="output"></p>

@@ -3,6 +3,50 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../header.html"%>
 <style>
+header{
+
+    position: fixed;
+    height:70px;
+    width: 100%;
+    background-color:rgba(255,255,255,0.7);
+    color: #000;
+    z-index:5;
+
+  }
+
+  .sub{
+
+    margin:0px 10px;
+    padding: 3px 10px;
+    background-color:#fff;
+    border-radius:4px;
+    color: #000;
+
+  }
+
+  .logo{
+
+    float: left;
+    width: 90px;
+    height: 65px;
+
+  }
+
+  .header-left{
+
+    float: left;
+    padding: 25px;
+
+  }
+
+  .header-right{
+
+    float: right;
+    padding: 25px;
+    margin-right: 5px;
+
+  }
+
 .heading {
 	position: relative;
 	margin-bottom: 2.5em;
@@ -541,37 +585,38 @@ img {
 
 <header>
 
-	<div class="header-logo">
+		<div class="header-logo">
+		
+		<form action="../views/login-error.jsp" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form>
 
-		<img src="../views/image/T-logo.png" class="logo">
+         <div class="header-left" style="display:inline-flex">
+          
+            <form action="#" method="post" ><input type="submit" class="sub" id="M" value="RECOMMEND"></form>
+            <form action="../views/login-error.jsp" method="post"><input type="submit" class="sub" id="W" value="RANKING"></form>
+            <form action="../views/login-error.jsp" method="post"><input type="submit" class="sub" id="A" value="LOW PRICE"></form>
+            <form action="../views/login-error.jsp" method="post"><input type="submit" class="sub" id="C"value="HIGH PRICE"></form> 
+               
+         </div>
 
-		<div class="header-left">
+         <div class="header-right" style="display:inline-flex">
 
-			<a href="../views/login-error.jsp" class="sub"
-				id="M">MEN'S</a> <a
-				href="../views/login-error.jsp" class="sub"
-				id="W">WOMEN'S</a> <a
-				href="../views/login-error.jsp" class="sub"
-				id="A">ACCESSORIES</a> <a
-				href="../views/login-error.jsp" class="sub"
-				id="C">COLLECTIONS</a>
+　　　　　　　      <form action="../views/login-error.jsp" method="post" class="#">
+					<input type="text" class="#" name="keyword" placeholder="Input any words!">
+					<input type="submit" class="sub" value="SEARCH">
+				 </form>
+				 <!-- form action="../views/login-error.jsp" method="post"><input type="submit" class="sub" id="map" value="MAP"></form> -->
+	             <form action="../views/login-error.jsp" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form> 
+	             <form action="../views/login-error.jsp" method="post"><input type="submit" class="sub" id="" value="LOG OUT"></form> 
+  
+		 </div>
 
-		</div>
-
-		<div class="header-right">
-
-			<a href="../views/login-error.jsp" class="sub">SEARCH</a>
-			<a href="../views/login-error.jsp" class="sub">ACCOUNT</a>
-			<a href="../views/login-error.jsp" class="sub">MAP</a>
-			<a href="../views/login-error.jsp" class="sub">SHOPPING
-				BAG</a> <a href="../views/login-error.jsp"
-				class="sub">LOG OUT</a>
-
-		</div>
+		
 
 	</div>
 
-</header>
+ </header>
+	
+
 <div class="wrapper">
 	<div class="container2">
 
