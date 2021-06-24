@@ -16,7 +16,7 @@
 
 h1{
 
-	
+	padding-left:20px;
 	text-align:center;
 
 }
@@ -65,7 +65,6 @@ h1{
     margin:20px 10px;
     font-size: 25px;
     border-radius: 6px; /*ボックス角の丸み*/
-    border: 4px solid #ddd; /*枠線*/
     box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/  
     cursor:pointer;	
 }
@@ -129,10 +128,28 @@ h1{
 
 }
 
-a{
-    cursor: pointer;
+.btn-gradation {
+  display: inline-block;
+  width: 100%; /*親要素いっぱい広げる*/
+  text-align: center;
+  font-size: 25px;
+  color: #3f3f3f;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 20px 30px; /*ボックスを大きくする*/
+  border-radius: 30px; /*ボックス角の丸み*/
+  background-image: linear-gradient(-90deg, #ffff55, #dcf8f8);
+  transition: .5s;
+  background-size: 200%;
+  cursor:pointer;	
+  margin:20px 10px;
+  box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/  
+  
 }
 
+.btn-gradation:hover {
+  background-position: right center;
+}
 </style>
 
 <h3 class="header-left">(ようこそ${loginBean.name}さん。)</h3>
@@ -147,11 +164,11 @@ a{
 <br>
 <h1>管理者画面</h1>
 <form action="../src/allSearch" method="post">
-<button type="submit" class="click">商品情報一覧表示</button>
+<button type="submit" class="click btn-gradation">商品情報一覧表示</button>
 </form>
-<button type="button" class="click" onclick="location.href='../views/regist.jsp'">商品情報新規登録</button>
-<button type="button" class="click" onclick="location.href='../views/update.jsp'">商品情報変更</button>
-<button type="button" class="click" onclick="location.href='../views/delete.jsp'">商品情報削除</button>
+<button type="button" class="click btn-gradation" onclick="location.href='../views/regist.jsp'">商品情報新規登録</button>
+<button type="button" class="click btn-gradation" onclick="location.href='../views/update.jsp'">商品情報変更</button>
+<button type="button" class="click btn-gradation" onclick="location.href='../views/delete.jsp'">商品情報削除</button>
 
 </div>
 
