@@ -14,6 +14,38 @@
 </head>
 <style>
 
+.flat.border {
+  position: relative;
+  text-align: center;
+  /* 中央揃え */
+  display: block;
+  margin:0px 5px 0px 5px;
+  /* 幅の指定 */
+  width: 100%;
+  max-width: 200px;
+  box-sizing: border-box;
+  padding: 3px 8px;
+  /* 色の指定 */
+  background: linear-gradient(135deg, #grey, #fff);
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: 2px solid #ccc;
+  background: #fff;
+  color: black;
+  cursor:pointer;
+  
+}
+.flat.border:hover {
+  background: grey;
+  color: #fff;
+}
+.flat.border:active, .flat.border:focus {
+  top: 2px;
+
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -68,8 +100,8 @@
 
   .sub{
 
-    margin:0px 5px;
-    padding: 2px 10px;
+    margin:0px 10px;
+    padding: 3px 10px;
     background-color:#fff;
     border-radius:4px;
     color: #000;
@@ -97,6 +129,12 @@
     padding: 25px;
     margin-right: 5px;
 
+  }
+  
+  .header-space{
+  
+    margin:0px 5px;
+  
   }
 
   .shop-wrapper{
@@ -285,6 +323,7 @@
     width: 100%;
     margin: 0 auto;
     padding-top:80px;
+    padding-right:10px;
     text-align: center;
     font-size: 20px;
     
@@ -292,7 +331,9 @@
 
   .numbers{
 
+    padding:3px 6px;
     color: #000;
+    cursor:pointer;
 
   }
 
@@ -318,7 +359,7 @@
   .footer-center{
 
     padding-top:100px;
-    padding-right:30px ;
+    padding-right:10px ;
   
   }
 
@@ -333,7 +374,8 @@
 
   .footer-left{
 
-    float: left; 
+    float: left;
+    margin:50px 0px 0px 40px; 
 
   }
 
@@ -425,6 +467,8 @@
 
     width: 260px;
     height:270px;
+    
+    
 
   }
 
@@ -542,33 +586,35 @@ $(function(){
          
         <div class="header-logo">
 
-           <img src="../views/image/T-logo.png" class="logo">
+           <form action="../src/UserAllSearch" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form>
 
            <div class="header-left" style="display:inline-flex">
             
-	             <form action="#" method="post" ><a href="#" class="sub" id="M">RECOMMEND</a></form>
-	             <p>SORT  (</p>
-	             <form action="../src/ranking" method="post"><input type="submit" class="sub" id="W" value="RANKING"></form>
-	             <form action="../src/lowPrice" method="post"><input type="submit" class="sub" id="A" value="LOW PRICE"></form>
-	             <form action="../src/highPrice" method="post"><input type="submit" class="sub" id="C"value="HIGH PRICE"></form>
-                 <p>  )</p>
+	             <form action="#" method="post" class="header-space"><input type="submit" class="reset flat border" id="M" value="RECOMMEND"></form>
+	             <form action="../src/ranking" method="post" class="header-space"><input type="submit" class="reset flat border" id="W" value="RANKING"></form>
+	             <form action="../src/lowPrice" method="post" class="header-space"><input type="submit" class="reset flat border" id="A" value="LOW PRICE"></form>
+	             <form action="../src/highPrice" method="post" class="header-space"><input type="submit" class="reset flat border" id="C"value="HIGH PRICE"></form>
+                 
            </div>
 
-           <div class="header-right">
+           <div class="header-right" style="display:inline-flex">
 
-　　　　　　　 <a href="#" class="sub">SEARCH</a>
-            <a href="#" class="sub">ACCOUNT</a>
-            <a href="#" class="sub">MAP</a>
-            <a href="#" class="sub" id=bag>SHOPPING BAG</a>
-            <a href="../views/logout-out.jsp" class="sub">LOG OUT</a>
+　　　　　　　      <form action="../src/keyWord" method="post" class="header-space" style="display:inline-flex">
+					<input type="text" class="#" name="keyword" placeholder="Input any words!">
+					<input type="submit" class="reset flat border up" value="SEARCH">
+				 </form>
+				 <form action="#" method="post" class="header-space"><input type="submit" class="reset flat border" id="map" value="MAP"></form>
+	             <form action="../src/cart" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="SHOPPING CART"></form>
+	             <form action="../views/logout-out.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
+	             
 
-          </div>
+           </div>
 
-        </div>
+       </div>
 
     </header>
 
-    <div id="shop" class="cart">
+    <%-- <div id="shop" class="cart">
 
       <div class="shop-wrapper">
 
@@ -608,7 +654,7 @@ $(function(){
 
       </div>
 
-    </div>
+    </div> --%>
 
     <div id="topb" class="top-bottom">
 
@@ -726,7 +772,7 @@ $(function(){
             <p class="hm-price">¥8,800</p>
           </div>
           <div class="hm-item">
-            <a href="#"><img src="../views/imgae/hlt4.jpeg" class="hm"></a>
+            <a href="#"><img src="../views/image/hlt4.jpeg" class="hm"></a>
             <p>STOCK LOW PRO CAP</p>
             <p class="hm-price">¥7,700</p>
           </div>
@@ -860,8 +906,8 @@ $(function(){
         <div class="number">
 
           <div style="display:inline-flex">
-            <form action="../src/allSearch" method="post"><input type="submit" class="numbers" value="1"></form>・
-            <form action="../src/allSearch2" method="post"><input type="submit" class="numbers" value="2"></form>・
+            <form action="../src/UserAllSearch" method="post"><input type="submit" class="numbers" value="1"></form>・
+            <form action="../src/UserAllSearch2" method="post"><input type="submit" class="numbers" value="2"></form>・
             <form action="#" method="post"><input type="submit" class="numbers" value="3"></form>・
             <form action="#" method="post"><input type="submit" class="numbers" value="4"></form>
           </div>
@@ -883,7 +929,7 @@ $(function(){
 
         <div class="footer-left">
           
-          <p>ようこそ${loginBean.name}さん</p>
+          ようこそ${loginBean.name}さん
           
         </div>
 
@@ -914,8 +960,6 @@ $(function(){
     <div class="footer-line">
 
     </div>
-    <script src="T-s.js"></script>
-
       
 </body>
 </html>

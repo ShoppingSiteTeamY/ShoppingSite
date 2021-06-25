@@ -2,6 +2,7 @@ package jp.co.aforce.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,8 +16,8 @@ import jp.co.aforce.bean.CartBean;
 import jp.co.aforce.bean.LoginBean;
 import jp.co.aforce.tool.Page;
 
-@WebServlet(urlPatterns = { "/src/cartInsert" })
-public class CartInsert extends HttpServlet {
+@WebServlet(urlPatterns = { "/src/cartDelete" })
+public class CartDelete extends HttpServlet {
 
 	public void doPost(
 
@@ -44,20 +45,21 @@ public class CartInsert extends HttpServlet {
 			cart.setItem_size(item_size);
 			cart.setItem_quantity(item_quantity);
 			
-			int line = dao.cartInsert(cart, loginBean.getMember_no(),loginBean.getName());
+			int line = dao.cartDelete(cart, loginBean.getMember_no(),loginBean.getName());
 			
 			if (line > 0) {
 
-//				out.println("カートへの追加に成功しました。");
-				
-				request.getRequestDispatcher(cart.getLocation()).forward(request, response);
+//				out.println("カートへの削除に成功しました。");
+				List<CartBean> cartBean = dao.cartSearch(loginBean.getMember_no());
+				session.setAttribute("cartBean", cartBean);
+				request.getRequestDispatcher("../views/cart.jsp").forward(request, response);
 
 			}
 
 		} catch (Exception e) {
 
 			//データのエラー調整用
-			//e.printStackTrace(out);
+			e.printStackTrace(out);
 //			out.println("カートへの追加に失敗しました。");
 
 		}
