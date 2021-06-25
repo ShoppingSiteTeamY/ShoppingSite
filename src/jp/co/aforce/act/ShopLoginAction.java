@@ -33,15 +33,19 @@ public class ShopLoginAction extends Action {
 			
 			session.setAttribute("loginBean", loginBean);
 			
+			//Return 管理者画面
 			return "../views/menu.jsp";
 			
 		}else if(loginBean.getMember_no() != null && loginBean.getPassword() != null ) {
 			
 			session.setAttribute("loginBean", loginBean);
 			
+			//Return ユーザー画面サーブレットへ
 			return "../src/UserAllSearch";
 			
 		} 
+		
+		session.setAttribute("loginBean", loginBean);
 		
 		return "../views/login-error.jsp";
 		

@@ -316,6 +316,54 @@ public class ItemDAO extends DAO{
 		return list;
 
 	}
+	
+	
+	public List<ItemBean> wordSearch(String keyword) throws Exception {
+
+		//保存先のBeanクラスを指定したListの宣言、
+		List<ItemBean> list = new ArrayList<>();
+
+		//DBに接続を行う。
+		Connection con = getConnection();
+
+		//適宜必要なSQL文を引数にセットし、変数stを使いset.Stringを使って？の部分に値を挿入する。
+		PreparedStatement st = con.prepareStatement(
+
+				"select * from items where item_name like ?");
+		
+		//前処理済みの検索系SQLを実行し，実行結果を格納したResultSetオブジェクトを返却する。
+		st.setString(1,"%"+keyword+"%");
+		
+		ResultSet rs = st.executeQuery();
+		
+		//reで取得した値を、次の空白まで取得をするnext()メソッドを使い、１つずつ取得する。
+		while (rs.next()) {
+			
+			//Beanクラスのインスタンス作成
+			ItemBean item = new ItemBean();
+			//setに関する値を、上記のResultSetより1つずつ取り出し、取り出した値は文字列となっているのでString,intとしてそれぞれに割りふる。
+			item.setItem_no(rs.getString("item_no"));
+			item.setItem_name(rs.getString("item_name"));
+			item.setColor(rs.getString("color"));
+			item.setPrice(rs.getInt("price"));
+			item.setLocation(rs.getString("location"));
+			item.setImage(rs.getString("image"));
+			item.setRanking(rs.getString("Ranking"));
+			
+			list.add(item);
+		}
+
+		//PreparedStatementの終了
+		st.close();
+		//DBからの切断
+		con.close();
+
+		//listを呼び出し元に戻り値として返す。
+		return list;
+
+	}
+	
+	
 		
 }
 		

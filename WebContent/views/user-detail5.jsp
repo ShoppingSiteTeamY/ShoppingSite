@@ -415,11 +415,11 @@ img:hover{
 
         <div class="main-right">
 
-          <p>HAWAIIAN PATTERN SHIRT</p>
+          <p>SHERPA ZIP HOODIE</p>
           <br>
-          <p>¥9,480(税込)</p>
+          <p>¥27,500(税込)</p>
           <div class="small-wrapper">
-            <a onclick="location.href='../views/user-detail.jsp'"><img src="../views/image/t1.jpeg" class="small"></a>
+            <a onclick="location.href='../views/user-detail5.jsp'"><img src="../views/image/t14.jpeg" class="small"></a>
            <!--  <a onclick="location.href='../views/user-detail-a.jsp'"><img src="../views/image/t1a.jpeg"class="small"></a> -->
           </div>
           
@@ -451,7 +451,7 @@ img:hover{
 　　　　　　　
           	<div class="btn-wrapper">
            
-            	<input type="text" class="vanish" name="itemNo" value="T00001">
+            	<input type="text" class="vanish" name="itemNo" value="T00014">
             	<input type="submit" class="btn" value="カートに入れる">
             	
            </div>
@@ -462,7 +462,9 @@ img:hover{
           <p id="output"></p>
           <p id="total">
           </div> -->
-     
+          <p>YKKメタルモールデッドジッパークロージャー、2つのs</p>
+          <p>サイドポケットチェストポケット脇にビッグストックラ</p>
+          <p>ベルのついたロングスリーブシェルパ。</p>
           <p>100% レーヨン</p>
           <p>インポート</p>
           <br>
@@ -482,11 +484,11 @@ img:hover{
 
         <div class="main-left">
 
-          <img src="../views/image/t1.jpeg" class="t">
-          <img src="../views/image/t1-1.jpeg" class="t">
-          <img src="../views/image/t1-2.jpeg" class="t">
-          <img src="../views/image/t1-3.jpeg" class="t">
-          <img src="../views/image/t1-4.jpeg" class="t">
+          <img src="../views/image/t14.jpeg" class="t">
+          <img src="../views/image/t14-1.jpeg" class="t">
+          <img src="../views/image/t14-2.jpeg" class="t">
+          <img src="../views/image/t14-3.jpeg" class="t">
+          <img src="../views/image/t14-4.jpeg" class="t">
           
         </div>
         
@@ -536,37 +538,6 @@ img:hover{
        <div class="footer-line">
     
        </div>
-    <!-- <script>
-      'use strict'
-
-      function totalPrice(inputInt){
-
-        const price=9480;
-        let total = inputInt*price;
-        return total;
-
-      };
-
-      document.getElementById('wrap').onsubmit = function(event){
-
-        event.preventDefault();
-        let inputInt = document.getElementById('wrap').quantity.value;
-        console.log('クリックされました');
-        document.getElementById('output').textContent = inputInt+'着購入ありがとうございます。合計金額取得中…';
-        console.log(totalPrice(inputInt));
-        document.getElementById('total').textContent = '合計金額は'+totalPrice(inputInt)+'円です。';
-        
-      };
-
-      function formReset(){
-
-        document.totalPrice.reset();
-
-      };
-  
-
-
-    </script> -->
     
 </body>
 </html>
