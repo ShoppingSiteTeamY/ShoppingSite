@@ -55,7 +55,7 @@ body {
 	font-weight: 200;
 }
 .header div span {
-	color: #4169e1 !important;
+	color: #ffff2b !important;
 }
 .login {
 	position: absolute;
@@ -98,7 +98,7 @@ body {
 	border: 1px solid #fff;
 	cursor: pointer;
 	border-radius: 2px;
-	color: #4169e1;
+	color: #555;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -330,7 +330,7 @@ img {
 	<form action="../jp.co.aforce.act/ShopLogin.action" class="sign-up"
 		method="post">
 		<h3>IDまたはパスワードが違います</h3>
-		<h3>(May You wrong ID or Password.)</h3>
+		<h3>(You wrong the ID or Password.)</h3>
 		<br> <input type="text" placeholder="userID" name="member_no" value="${loginBean.member_no}" autofocus>
 		<br> <input type="password" placeholder="password" name="password"><br>
 		<input type="submit" value="Login">

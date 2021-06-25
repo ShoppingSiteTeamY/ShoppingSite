@@ -5,12 +5,108 @@
 <style>
 @charset "UTF-8";
 
+.flat.border {
+  position: relative;
+  text-align: center;
+  /* 中央揃え */
+  display: block;
+  margin: 0 auto;
+  /* 幅の指定 */
+  width: 100%;
+  max-width: 200px;
+  box-sizing: border-box;
+  padding: 5px;
+  /* 色の指定 */
+  background: linear-gradient(135deg, #grey, #fff);
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: 2px solid #ccc;
+  background: #fff;
+  color: black;
+}
+.flat.border:hover {
+  background: grey;
+  color: #fff;
+}
+.flat.border:active, .flat.border:focus {
+  top: 2px;
+}
+
+
+
+header{
+
+    position: fixed;
+    height:70px;
+    width: 100%;
+    background-color:rgba(255,255,255,0.7);
+    color: #000;
+    z-index:5;
+
+  }
+
+  .sub{
+
+    margin:0px 10px;
+    padding: 3px 10px;
+    background-color:#fff;
+    border-radius:4px;
+    color: #000;
+
+  }
+
+  .logo{
+
+    float: left;
+    width: 90px;
+    height: 65px;
+
+  }
+  
+  .header-space{
+  
+    margin:0px 10px;
+  
+  }
+
+  .header-left{
+
+    float: left;
+    padding: 25px;
+
+  }
+
+  .header-right{
+
+    float: right;
+    padding: 25px;
+    margin-right: 5px;
+
+  }
+
+
+.main{
+
+  position: absolute;
+	top: 0px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
+	width: auto;
+	height: auto;
+	background-image: url(../views/image/back2.jpg);
+	background-size: cover;
+	z-index: 0;
+
+}
+
 .container{
 	
-	margin:0 auto;
-	width:700px;
-	height:1200px;
+	position:absolute;
 	top:200px;
+	left:370px;
 	
 }
 
@@ -69,6 +165,15 @@ h1{
     cursor:pointer;	
 }
 
+.click2{
+	width: 100%; /*親要素いっぱい広げる*/
+    padding: 20px 5px; /*ボックスを大きくする*/
+    margin:20px 0px;
+    font-size: 25px;
+    border-radius: 6px; /*ボックス角の丸み*/
+    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/  
+    cursor:pointer;	
+}
 
 .number{
 	
@@ -138,7 +243,7 @@ h1{
   font-weight: bold;
   padding: 20px 30px; /*ボックスを大きくする*/
   border-radius: 30px; /*ボックス角の丸み*/
-  background-image: linear-gradient(-90deg, #ffff55, #dcf8f8);
+  background-image: linear-gradient(-90deg, #ffffd5, #eaffff);
   transition: .5s;
   background-size: 200%;
   cursor:pointer;	
@@ -147,31 +252,68 @@ h1{
   
 }
 
+
+
 .btn-gradation:hover {
   background-position: right center;
 }
 </style>
 
-<h3 class="header-left">(ようこそ${loginBean.name}さん。)</h3>
-<a class="header-right" onclick="location.href='../jp.co.aforce.act/ShopLogout.action'">ログアウト</a>
+<header>
+         
+        <div class="header-logo">
 
-<div class=container>
+          <!--  <form action="../views/login-error.jsp" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form> -->
+
+           <div class="header-left">
+            
+                 <h3>(ようこそ${loginBean.name}さん。)</h3>
+	             
+           </div>
+           
+           <h1>管理者画面</h1>
+
+           <div class="header-right" style="display:inline-flex">
+
+	             <form action="../views/login-error.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
+	             
+
+           </div>
+
+       </div>
+
+ </header>
 
 
-<div class="form">
-<br>
-<br>
-<br>
-<h1>管理者画面</h1>
-<form action="../src/allSearch" method="post">
-<button type="submit" class="click btn-gradation">商品情報一覧表示</button>
-</form>
-<button type="button" class="click btn-gradation" onclick="location.href='../views/regist.jsp'">商品情報新規登録</button>
-<button type="button" class="click btn-gradation" onclick="location.href='../views/update.jsp'">商品情報変更</button>
-<button type="button" class="click btn-gradation" onclick="location.href='../views/delete.jsp'">商品情報削除</button>
+<div class="main">
+<%-- 
+	<h3 class="header-left">(ようこそ${loginBean.name}さん。)</h3>
+	<a class="header-right"
+		onclick="location.href='../jp.co.aforce.act/ShopLogout.action'">ログアウト</a> --%>
+
+	<div class=container>
+
+
+		<div class="form">
+			<form action="../src/allSearch" method="post">
+				<button type="submit"
+					class="click btn-gradation">商品情報一覧表示</button>
+			</form>
+			<button type="button"
+				class="click btn-gradation"
+				onclick="location.href='../views/regist.jsp'">商品情報新規登録</button>
+			<button type="button"
+				class="click btn-gradation"
+				onclick="location.href='../views/update.jsp'">商品情報変更</button>
+			<button type="button"
+				class="click btn-gradation"
+				onclick="location.href='../views/delete.jsp'">商品情報削除</button>
+
+		</div>
+
+	</div>
 
 </div>
+>
 
-</div>
-
-<%@include file="../footer.html" %>
+<%@include file="../footer.html"%>

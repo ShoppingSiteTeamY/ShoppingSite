@@ -195,7 +195,7 @@ img {
   font-weight: 200;
 }
 .header div span{
-  color: #4169e1 !important;
+  color: #ffff2b !important;
 }
 .login{
   position: absolute;
@@ -224,7 +224,7 @@ img {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.6);
   border-radius: 2px;
-  color: #fff;
+  color: #ffff2b;
   font-family: 'Exo', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -238,7 +238,7 @@ img {
   border: 1px solid #fff;
   cursor: pointer;
   border-radius: 2px;
-  color: #4169e1;
+  color: #555;
   font-family: 'Exo', sans-serif;
   font-size: 16px;
   font-weight: 400;
