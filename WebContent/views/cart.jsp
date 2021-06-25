@@ -435,7 +435,7 @@ li.price:before, li.subtotal:before {
 				 </form>
 				 <form action="#" method="post"><input type="submit" class="sub" id="map" value="MAP"></form>
 	             <form action="../src/cart" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form> -->
-	             <a href="../jp.co.aforce.act/ShopLogout.action" class="sub">LOG OUT</a>
+	             <a href="../views/logout.jsp" class="sub">LOG OUT</a>
   
          </div>
 

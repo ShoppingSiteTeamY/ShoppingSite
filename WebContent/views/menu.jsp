@@ -260,7 +260,7 @@ h1{
 	
 	           <div class="header-right" style="display:inline-flex">
 	
-		             <form action="../jp.co.aforce.act/ShopLogout.action" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
+		             <form action="../views/logout.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
 		             
 	
 	           </div>
