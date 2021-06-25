@@ -19,7 +19,7 @@ public class ShopLogoutAction extends Action {
 
 		session.removeAttribute("loginBean");
 		
-		return "../views/login.jsp";
+		return "../views/logout.jsp";
 
 		
 

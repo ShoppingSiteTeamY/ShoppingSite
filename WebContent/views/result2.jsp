@@ -75,7 +75,7 @@ header {
 		<div class="header-left" style="display: inline-flex"></div>
 
 		<div class="header-right" style="display: inline-flex">
-			<a href="../views/logout-out.jsp" class="sub">LOG OUT</a>
+			<a href="../jp.co.aforce.act/ShopLogout.action" class="sub">LOG OUT</a>
 
 		</div>
 
