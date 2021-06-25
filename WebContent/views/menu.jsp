@@ -17,7 +17,6 @@
   box-sizing: border-box;
   padding: 5px;
   /* 色の指定 */
-  background: linear-gradient(135deg, #grey, #fff);
   color: #000;
   font-weight: bold;
   border-radius: 8px;
@@ -41,8 +40,7 @@ header{
     position: fixed;
     height:70px;
     width: 100%;
-    background-color:rgba(255,255,255,0.7);
-    color: #000;
+    color: #ffffaa;
     z-index:5;
     font-family: 'Corben', cursive;
 
@@ -75,16 +73,18 @@ header{
   .header-left{
 
     float: left;
-    padding: 25px;
-    font-size:20px;
+    padding: 40px;
+    font-size:30px;
 
   }
   
   .header-center{
 
     text-align:center;
-    font-size:35px;
-    padding: 10px;
+    font-size:45px;
+    font-weight:bolder;
+    padding: 25px;
+    
     
 
   }
@@ -92,7 +92,7 @@ header{
   .header-right{
 
     float: right;
-    padding: 5px;
+    padding: 25px;
 
   }
 
@@ -232,7 +232,7 @@ h1{
   font-weight: bold;
   padding: 20px 30px; /*ボックスを大きくする*/
   border-radius: 30px; /*ボックス角の丸み*/
-  background-image: linear-gradient(-90deg, #ffff55, #ffffd5);
+  background-image: linear-gradient(-90deg, #eaffd5,#ffffaa);
   transition: .5s;
   background-size: 200%;
   cursor:pointer;	
