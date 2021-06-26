@@ -133,6 +133,7 @@ i {
 body {
 	background-color: #fff;
 	width: 100%;
+	
 }
 
 header {

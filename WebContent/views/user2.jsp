@@ -605,7 +605,7 @@ $(function(){
 				 </form>
 				 <form action="#" method="post" class="header-space"><input type="submit" class="reset flat border" id="map" value="MAP"></form>
 	             <form action="../src/cart" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="SHOPPING CART"></form>
-	             <form action="../views/logout-out.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
+	             <form action="../views/logout.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
 	             
 
            </div>
