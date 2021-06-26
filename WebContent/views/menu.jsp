@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<link href="https://fonts.googleapis.com/css?family=Corben:700 rel="stylesheet">
 <%@include file="../header.html" %>
 <style>
 @charset "UTF-8";
@@ -17,7 +17,6 @@
   box-sizing: border-box;
   padding: 5px;
   /* 色の指定 */
-  background: linear-gradient(135deg, #grey, #fff);
   color: #000;
   font-weight: bold;
   border-radius: 8px;
@@ -41,9 +40,9 @@ header{
     position: fixed;
     height:70px;
     width: 100%;
-    background-color:rgba(255,255,255,0.7);
-    color: #000;
+    color: #ffffaa;
     z-index:5;
+    font-family: 'Corben', cursive;
 
   }
 
@@ -74,7 +73,19 @@ header{
   .header-left{
 
     float: left;
+    padding: 40px;
+    font-size:30px;
+
+  }
+  
+  .header-center{
+
+    text-align:center;
+    font-size:45px;
+    font-weight:bolder;
     padding: 25px;
+    
+    
 
   }
 
@@ -82,7 +93,6 @@ header{
 
     float: right;
     padding: 25px;
-    margin-right: 5px;
 
   }
 
@@ -91,12 +101,12 @@ header{
 
   position: absolute;
 	top: 0px;
-	left: -20px;
-	right: -40px;
-	bottom: -40px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
 	width: auto;
 	height: auto;
-	background-image: url(../views/image/back2.jpg);
+	background-image: url(../views/image/back4.jpg);
 	background-size: cover;
 	z-index: 0;
 
@@ -105,8 +115,8 @@ header{
 .container{
 	
 	position:absolute;
-	top:200px;
-	left:370px;
+	top:150px;
+	left:350px;
 	
 }
 
@@ -122,7 +132,7 @@ h1{
 	top:300px;
 	margin:0 auto;
 	width :700px;
-	height:700px;
+	height:500px;
 	
 }
 
@@ -165,16 +175,6 @@ h1{
     cursor:pointer;	
 }
 
-.click2{
-	width: 100%; /*親要素いっぱい広げる*/
-    padding: 20px 5px; /*ボックスを大きくする*/
-    margin:20px 0px;
-    font-size: 25px;
-    border-radius: 6px; /*ボックス角の丸み*/
-    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/  
-    cursor:pointer;	
-}
-
 .number{
 	
 	width: 60%; /*親要素いっぱい広げる*/
@@ -200,18 +200,7 @@ h1{
 	
 	
 }
-.btn{
-	
-	width: 20%; /*親要素の45％分広げる*/
-    padding: 10px 0px; /*ボックスを大きくする*/
-    margin:10px 10px;
-    font-size: 15px;
-    border-radius: 4px; /*ボックス角の丸み*/
-    border: 2px solid #ddd; /*枠線*/
-    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/  
-    cursor:pointer;	
-	
-}
+
 
 .header-left{
 
@@ -243,7 +232,7 @@ h1{
   font-weight: bold;
   padding: 20px 30px; /*ボックスを大きくする*/
   border-radius: 30px; /*ボックス角の丸み*/
-  background-image: linear-gradient(-90deg, #ffffd5, #eaffff);
+  background-image: linear-gradient(-90deg, #eaffd5,#ffffaa);
   transition: .5s;
   background-size: 200%;
   cursor:pointer;	
@@ -252,41 +241,34 @@ h1{
   
 }
 
-
-
 .btn-gradation:hover {
   background-position: right center;
 }
 </style>
 
-<header>
-         
-        <div class="header-logo">
-
-          <!--  <form action="../views/login-error.jsp" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form> -->
-
-           <div class="header-left">
-            
-                 <h3>(ようこそ${loginBean.name}さん。)</h3>
-	             
-           </div>
-           
-           <h1>管理者画面</h1>
-
-           <div class="header-right" style="display:inline-flex">
-
-	             <form action="../views/login-error.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
-	             
-
-           </div>
-
-       </div>
-
- </header>
-
-
 <div class="main">
-<%-- 
+
+	<header>
+	         
+	        <div class="header-logo">
+	
+	          <!--  <form action="../views/login-error.jsp" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form> -->
+	
+	           <div class="header-left">Welcome to ${loginBean.name} !</div>
+	           
+	           <div class="header-center">Management Screen</div>
+	
+	           <div class="header-right" style="display:inline-flex">
+	
+		             <form action="../views/logout.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
+		             
+	
+	           </div>
+	
+	       </div>
+	
+	 </header>
+	<%-- 
 	<h3 class="header-left">(ようこそ${loginBean.name}さん。)</h3>
 	<a class="header-right"
 		onclick="location.href='../jp.co.aforce.act/ShopLogout.action'">ログアウト</a> --%>
