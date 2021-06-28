@@ -40,7 +40,7 @@ header{
     position: fixed;
     height:70px;
     width: 100%;
-    color: #ffffaa;
+    color: #fff;
     z-index:5;
     font-family: 'Corben', cursive;
 
@@ -232,7 +232,7 @@ h1{
   font-weight: bold;
   padding: 20px 30px; /*ボックスを大きくする*/
   border-radius: 30px; /*ボックス角の丸み*/
-  background-image: linear-gradient(-90deg, #eaffd5,#ffffaa);
+  background-image: linear-gradient(-90deg, #fff,#ffff);
   transition: .5s;
   background-size: 200%;
   cursor:pointer;	

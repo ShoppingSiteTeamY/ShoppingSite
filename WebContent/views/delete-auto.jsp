@@ -38,7 +38,7 @@
 header {
 	height: 70px;
 	width: 100%;
-	color: #ffffaa;
+	color:#fff;
 	z-index: 5;
 	font-family: 'Corben', cursive;
 }
