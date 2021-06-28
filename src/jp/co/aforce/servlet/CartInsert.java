@@ -49,7 +49,8 @@ public class CartInsert extends HttpServlet {
 			if (line > 0) {
 
 //				out.println("カートへの追加に成功しました。");
-				request.getRequestDispatcher("../views/user-detail.jsp").forward(request, response);
+				
+				request.getRequestDispatcher(cart.getLocation()).forward(request, response);
 
 			}
 

@@ -61,8 +61,7 @@ public class DeleteAuto extends HttpServlet {
 			
 				if(line>0) {
 					
-					out.println("削除に成功しました。");
-					out.println("<button type=\"button\" class=\"button\" onclick=\"location.href='menu.jsp'\" name=\"back\">戻る</button>");
+					request.getRequestDispatcher("../views/menu.jsp").forward(request, response);
 					
 				}else {
 		

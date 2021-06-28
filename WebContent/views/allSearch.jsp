@@ -156,7 +156,6 @@ img{
 <%@include file="../header.html" %>
 
 
-<h1>商品情報一覧表示画面</h1>
 
 <c:forEach var="item" items="${itemBean}">
 
@@ -173,6 +172,7 @@ img{
 		
 	</div>
 </c:forEach>
+
 
 <!-- history.backを使う方法 -->
 <!-- button type="button" class="button" onclick="history.back()" name="back">戻る</button-->

@@ -102,14 +102,14 @@ header {
 
 	<div class="header-logo">
 
-		<form action="../src/UserAllSearch" method="post">
+		<!-- <form action="../src/UserAllSearch" method="post">
 			<input type="image" src="../views/image/T-logo.png" class="logo">
-		</form>
+		</form> -->
 
 		<div class="header-left" style="display: inline-flex"></div>
 
 		<div class="header-right" style="display: inline-flex">
-			<a href="../views/logout-out.jsp" class="sub">LOG OUT</a>
+			<a href="../views/logout.jsp" class="sub">LOG OUT</a>
 
 		</div>
 

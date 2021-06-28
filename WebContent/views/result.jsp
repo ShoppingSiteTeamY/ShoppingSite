@@ -390,7 +390,15 @@ header {
 	padding: 25px;
 	margin-right: 5px;
 }
+
+.strong{
+
+    font-weight:bold;
+
+}
+
 </style>
+
 
 
 <header>
@@ -418,7 +426,7 @@ header {
 				 </form>
 				 <form action="#" method="post"><input type="submit" class="sub" id="map" value="MAP"></form>
 	             <form action="../src/cart" method="post"><input type="submit" class="sub" id="bag" value="SHOPPING CART"></form> -->
-			<a href="../views/logout-out.jsp" class="sub">LOG OUT</a>
+			<a href="../jp.co.aforce.act/ShopLogout.action" class="sub">LOG OUT</a>
 
 		</div>
 
@@ -450,19 +458,27 @@ header {
 			<div class="info">
 				<strong>お届け先住所</strong> <br> <br>
 
-				<p>氏名</p>
+				<strong>氏名</strong>
 
-				<p>
+				<p class="strong">
 					<c:out value="${name}" />
 				</p>
+				
+				<br>
 
-				<p>郵便番号</p>
+				<strong>郵便番号</strong>
+				
+				<br>
 
-				<p>
+				<p class="strong">
 					<input type="text" required>
 				</p>
+				
+				<br>
 
-				<p>都道府県</p>
+				<strong>都道府県</strong>
+			
+				<br><br>
 				<select name="pref_name" required>
 					<option value="" selected>-</option>
 					<option value="北海道">北海道</option>
@@ -513,16 +529,24 @@ header {
 					<option value="鹿児島県">鹿児島県</option>
 					<option value="沖縄県">沖縄県</option>
 				</select>
+				
+				<br><br>
 
-				<p>住所</p>
+				<strong>住所</strong>
+				
+				<br>
 
-				<p>
+				<p class="strong">
 					<input type="text" style="width: 500px;" required>
 				</p>
 
-				<p>電話番号</p>
+ 				<br>
+ 				
+				<strong>電話番号</strong>
+				
+				<br>
 
-				<p>
+				<p class="strong">
 					<input type="text" required>
 				</p>
 

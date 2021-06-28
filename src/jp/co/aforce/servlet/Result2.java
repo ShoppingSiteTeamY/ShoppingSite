@@ -20,9 +20,13 @@ import jp.co.aforce.tool.Page;
 @WebServlet(urlPatterns = { "/src/result2" })
 public class Result2 extends HttpServlet {
 	public void doPost(
+
 			HttpServletRequest request, HttpServletResponse response
+
 	) throws ServletException, IOException {
+
 		PrintWriter out = response.getWriter();
+
 		Page.header(out);
 
 		Calendar calendar = Calendar.getInstance();

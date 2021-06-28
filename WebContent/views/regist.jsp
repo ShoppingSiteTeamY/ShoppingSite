@@ -1,32 +1,314 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<link rel="stylesheet" href="member.css">
-<%@include file="../header.html" %>
-
-<form action="../src/regist" method="post" class="form">
-
-<h1>商品情報新規登録画面(必須*)</h1>
-
-商品番号
-<input type = "text" class ="box" name="itemNo" >
-商品名(*)
-<input type = "text" class ="box" name="itemName">
-色(*)
-<input type = "text" class="box" name="itemColor">
-値段(*)
-<input type = "text" class="box" name="itemPrice">
-ロケーションパス(*)
-<input type = "text" class="box" name="itemLocation">
-画像パス(*)
-<input type = "text" class="box" name="itemImage">
-人気順位(*)
-<input type = "text" class="box" name="itemRanking">
+<%@ page language="java"
+	contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 
-<button type="button" class="button" onclick="location.href='menu.jsp'">戻る</button>
-<button type="submit" class="button">登録</button>
+<%@include file="../header.html"%>
 
-</form>
+<style>
+@charset "UTF-8";
 
-<%@include file="../footer.html" %>
+.flat.border {
+	position: relative;
+	text-align: center;
+	/* 中央揃え */
+	display: block;
+	margin: 0 auto;
+	/* 幅の指定 */
+	width: 100%;
+	max-width: 200px;
+	box-sizing: border-box;
+	padding: 5px;
+	/* 色の指定 */
+	color: #000;
+	font-weight: bold;
+	border-radius: 8px;
+	transition: 0.3s;
+	border: 2px solid #ccc;
+	background: #fff;
+	color: black;
+}
+
+.flat.border:hover {
+	background: grey;
+	color: #fff;
+}
+
+.flat.border:active, .flat.border:focus {
+	top: 2px;
+}
+
+header {
+	height: 70px;
+	width: 100%;
+	color: #fff;
+	z-index: 5;
+	font-family: 'Corben', cursive;
+}
+
+.sub {
+	margin: 0px 10px;
+	padding: 3px 10px;
+	background-color: #fff;
+	border-radius: 4px;
+	color: #000;
+}
+
+.logo {
+	float: left;
+	width: 90px;
+	height: 65px;
+}
+
+.header-space {
+	margin: 0px 10px;
+}
+
+.header-left {
+	float: left;
+	padding: 40px 40px 40px 210px;
+	font-size: 30px;
+}
+
+.header-center {
+	text-align: center;
+	font-size: 45px;
+	font-weight: bolder;
+	padding: 25px;
+}
+
+.header-right {
+	float: right;
+	padding: 25px;
+}
+
+.main {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: auto;
+	height: 850px;
+	background-image: url(../views/image/back14.jpg);
+	background-size: cover;
+	z-index: 0;
+}
+
+.container {
+	position: absolute;
+	top: 120px;
+	left: 50px;
+}
+
+h1 {
+	padding-left: 20px;
+	text-align: center;
+}
+
+.form {
+	top: 300px;
+	margin: 0 auto;
+	width: 700px;
+	height: 300px;
+}
+
+.search-form {
+	margin: 0 auto;
+	width: 700px;
+	height: 100px;
+}
+
+.box {
+	width: 100%; /*親要素いっぱい広げる*/
+	padding: 20px 30px; /*ボックスを大きくする*/
+	font-size: 20px;
+	margin: 10px 10px;
+	border-radius: 6px; /*ボックス角の丸み*/
+	border: 4px solid #ddd; /*枠線*/
+	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.select {
+	width: 15%; /*親要素いっぱい広げる*/
+	padding: 20px 55px; /*ボックスを大きくする*/
+	margin: 20px 30px 10px 30px;
+	color: black;
+	font-size: 20px;
+	border-radius: 6px; /*ボックス角の丸み*/
+	border: 4px solid #ddd; /*枠線*/
+	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.click {
+	width: 100%; /*親要素いっぱい広げる*/
+	padding: 20px 30px; /*ボックスを大きくする*/
+	margin: 20px 10px;
+	font-size: 25px;
+	border-radius: 6px; /*ボックス角の丸み*/
+	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+	cursor: pointer;
+}
+
+.number {
+	width: 60%; /*親要素いっぱい広げる*/
+	padding: 20px 30px; /*ボックスを大きくする*/
+	font-size: 20px;
+	margin: 10px 10px;
+	border-radius: 6px; /*ボックス角の丸み*/
+	border: 4px solid #ddd; /*枠線*/
+	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.button {
+	width: 35%; /*親要素の45％分広げる*/
+	padding: 20px 0px; /*ボックスを大きくする*/
+	margin: 20px 50px;
+	font-size: 25px;
+	border-radius: 6px; /*ボックス角の丸み*/
+	border: 4px solid #ddd; /*枠線*/
+	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+	cursor: pointer;
+}
+
+.header-left {
+	position: absolute;
+	top: 0px;
+	left: 20px;
+	display: block;
+	text-align: left;
+}
+
+.header-right {
+	position: absolute;
+	top: 20px;
+	right: 40px;
+	display: block;
+	text-align: right;
+}
+
+.btn-gradation {
+	display: inline-block;
+	width: 80%; /*親要素いっぱい広げる*/
+	text-align: center;
+	font-size: 20px;
+	color: #3f3f3f;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 9px 10px; /*ボックスを大きくする*/
+	border-radius: 30px; /*ボックス角の丸み*/
+	transition: .5s;
+	background-size: 200%;
+	cursor: pointer;
+	margin: 15px 5px;
+	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.btn-gradation2 {
+	display: inline-block;
+	width: 45%; /*親要素いっぱい広げる*/
+	text-align: center;
+	font-size: 16px;
+	color: #3f3f3f;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 10px 10px; /*ボックスを大きくする*/
+	border-radius: 30px; /*ボックス角の丸み*/
+	transition: .5s;
+	background-size: 200%;
+	cursor: pointer;
+	margin: 0px 5px;
+	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.btn-wrapper {
+	padding-top: 40px;
+	padding-left: 25px;
+}
+
+.input-wrapper {
+	padding-left: 100px;
+}
+
+.btn-gradation:hover {
+	background-position: right center;
+	
+}
+
+</style>
+
+<div class="main">
+
+	<header>
+
+		<div class="header-logo">
+
+			<!--  <form action="../views/login-error.jsp" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form> -->
+
+			<div class="header-left">商品新規登録画面(必須*)
+				</div>
+
+			<!-- <div class="header-center"></div> -->
+
+			<div class="header-right"
+				style="display: inline-flex">
+
+				<!-- <form action="../views/logout.jsp"
+					method="post" class="header-space">
+					<input type="submit"
+						class="reset flat border" id="bag"
+						value="LOG OUT">
+				</form> -->
+
+
+			</div>
+
+		</div>
+
+	</header>
+
+	<div class="container">
+
+		<form action="../src/regist" method="post"
+			class="form">
+
+			<div class="input-wrapper">
+
+				<!-- <p>商品番号</p> -->
+				<input type="text" class="click btn-gradation"
+					name="itemNo" placeholder="商品番号(*)">
+				<!-- <p>商品名(*)</p> -->
+				<input type="text" class="click btn-gradation"
+					name="itemName" placeholder="商品名(*)">
+				<!-- <p>色(*)</p> -->
+				<input type="text" class="click btn-gradation"
+					name="itemColor" placeholder="色(*)">
+				<!-- <p> 値段(*)</p> -->
+				<input type="text" class="click btn-gradation"
+					name="itemPrice" placeholder="値段(*)">
+				<!-- <p>ロケーションパス(*)</p> -->
+				<input type="text" class="click btn-gradation"
+					name="itemLocation" placeholder="ロケーションパス(*)">
+				<!-- <p>画像パス(*)</p> -->
+				<input type="text" class="click btn-gradation"
+					name="itemImage" placeholder="画像パス(*)">
+				<!-- <p>人気順位(*)</p> -->
+				<input type="text" class="click btn-gradation"
+					name="itemRanking" placeholder="人気順位(*)">
+
+			</div>
+
+			<div class="btn-wrapper">
+				<button type="button"
+					class="click btn-gradation2"
+					onclick="location.href='menu.jsp'">戻る</button>
+				<button type="submit"
+					class="click btn-gradation2">登録</button>
+			</div>
+		</form>
+
+	</div>
+
+</div>
+
+<%@include file="../footer.html"%>

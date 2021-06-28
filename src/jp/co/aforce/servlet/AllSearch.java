@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.co.aforce.DAO.ItemDAO;
 import jp.co.aforce.bean.ItemBean;
@@ -22,6 +23,8 @@ public class AllSearch extends HttpServlet {
 			HttpServletRequest request, HttpServletResponse response
 
 	) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
 
 		PrintWriter out = response.getWriter();
 
@@ -33,7 +36,7 @@ public class AllSearch extends HttpServlet {
 
 			List<ItemBean> itemBean = dao.allSearch();
 
-				request.setAttribute("itemBean", itemBean);
+				session.setAttribute("itemBean", itemBean);
 				request.getRequestDispatcher("../views/allSearch.jsp").forward(request, response);
 			
 			

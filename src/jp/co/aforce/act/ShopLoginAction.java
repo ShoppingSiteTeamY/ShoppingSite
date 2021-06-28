@@ -45,6 +45,8 @@ public class ShopLoginAction extends Action {
 			
 		} 
 		
+		session.setAttribute("loginBean", loginBean);
+		
 		return "../views/login-error.jsp";
 		
 	    }catch(Exception e){

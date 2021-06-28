@@ -17,16 +17,23 @@ public class ShopLogoutAction extends Action {
 		HttpSession session = request.getSession();
 		
 
-		if (session.getAttribute("loginBean") != null) {
+		session.removeAttribute("loginBean");
+		
+		return "../views/login.jsp";
 
-			session.removeAttribute("loginBean");
-			
-			return "../views/login.jsp";
-
-		}
-
-		return "../views/login-error.jsp";
+		
 
 	}
 
 }
+
+
+//if (session.getAttribute("loginBean") != null) {
+//
+//	session.removeAttribute("loginBean");
+//	
+//	return "../views/login.jsp";
+//
+//}
+//
+//return "../views/logout-error.jsp";
