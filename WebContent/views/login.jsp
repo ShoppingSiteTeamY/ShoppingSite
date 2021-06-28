@@ -295,7 +295,7 @@ img {
 					<input type="submit" class="reset flat border up" value="SEARCH">
 				 </form>
 				 <form action="../views/login-error.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="map" value="MAP"></form>
-	             <form action=".../views/login-error.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="SHOPPING CART"></form>
+	             <form action="../views/login-error.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="SHOPPING CART"></form>
 	             <form action="../views/login-error.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
 	             
 
