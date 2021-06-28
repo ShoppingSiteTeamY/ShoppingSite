@@ -269,9 +269,9 @@ h1 {
 
 .right-title{
 
-  padding-right:50px;
+  padding-right:135px;
   font-size:30px;
-  color:#7f7f7f;
+  color:#7f7f7f;;
   font-weight:bolod;
 
 
