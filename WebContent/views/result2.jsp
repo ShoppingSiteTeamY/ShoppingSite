@@ -21,7 +21,9 @@ body {
 	font-size: 125%;
 }
 
-.thank{
+.thank {
+	font-size: 200%;
+	background-image: linear-gradient(transparent 60%, lightblue 0%);
 	font-size: 200%;
 }
 
@@ -62,6 +64,38 @@ header {
 	padding: 25px;
 	margin-right: 5px;
 }
+
+.info {
+	margin: 2em 0;
+	position: relative;
+	padding: 0.5em 1.5em;
+	border-top: solid 2px black;
+	border-bottom: solid 2px black;
+}
+
+.info:before, .info:after {
+	content: '';
+	position: absolute;
+	top: -10px;
+	width: 2px;
+	height: -webkit-calc(100% + 20px);
+	height: calc(100% + 20px);
+	background-color: black;
+}
+
+.info:before {
+	left: 10px;
+}
+
+.info:after {
+	right: 10px;
+}
+
+.info p {
+	margin: 0;
+	padding: 0;
+}
+
 </style>
 
 <header>
@@ -89,14 +123,16 @@ header {
 	<div class="container">
 		<div class="order">
 			<div class="thank">
-				<p>Thank You</p>
+				<strong><p>Thank You</p></strong>
 			</div>
 			<p>注文が確定されました。</p>
 			<br> <br>
 		</div>
-		<p>注文番号：${orderBean.order_no}</p>
-		<p>支払い方法：${orderBean.payment}</p>
-		<p>配達方法：${orderBean.delivery}</p>
+		<div class="info">
+			<p>注文番号：${orderBean.order_no}</p><br>
+			<p>支払い方法：${orderBean.payment}</p><br>
+			<p>配達方法：${orderBean.delivery}</p><br>
+		</div>
 	</div>
 </main>
 
