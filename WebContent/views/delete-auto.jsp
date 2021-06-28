@@ -379,7 +379,7 @@ h1 {
 					class="click btn-gradation2"
 					onclick="location.href='../views/menu.jsp'">戻る</button>
 				<button type="submit"
-					class="click btn-gradation2">削除</button>
+					class="click btn-gradation2">削除確定</button>
 			</div>
 		</form>
 

@@ -1,367 +1,286 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java"
+	contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEAR HOUSE Detail</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0">
+<title>WEAR HOUSE Detail</title>
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
 </head>
 <style>
 .flat.border {
-  position: relative;
-  text-align: center;
-  /* 中央揃え */
-  display: block;
-  margin:0px 5px 0px 5px;
-  /* 幅の指定 */
-  width: 100%;
-  max-width: 200px;
-  box-sizing: border-box;
-  padding: 3px 8px;
-  /* 色の指定 */
-  background: linear-gradient(135deg, #grey, #fff);
-  color: #000;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: 0.3s;
-  border: 2px solid #ccc;
-  background: #fff;
-  color: black;
-  cursor:pointer;
-  
+	position: relative;
+	text-align: center;
+	/* 中央揃え */
+	display: block;
+	margin: 0px 5px 0px 5px;
+	/* 幅の指定 */
+	width: 100%;
+	max-width: 200px;
+	box-sizing: border-box;
+	padding: 3px 8px;
+	/* 色の指定 */
+	background: linear-gradient(135deg, #grey, #fff);
+	color: #000;
+	font-weight: bold;
+	border-radius: 8px;
+	transition: 0.3s;
+	border: 2px solid #ccc;
+	background: #fff;
+	color: black;
+	cursor: pointer;
 }
+
 .flat.border:hover {
-  background: grey;
-  color: #fff;
+	background: grey;
+	color: #fff;
 }
+
 .flat.border:active, .flat.border:focus {
-  top: 2px;
-
+	top: 2px;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-  }
-  html{
-    font-size: 16px;
-  }
-  body {
-    font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  }
-  header, footer, nav, menu, article, aside, section, details, figcaption, figure{
-    display: block;
-  }
-  ul, ol {
-    list-style: none;
-  }
-  table {
-    border-collapse: collapse;
-  }
-  img {
-    vertical-align: bottom;
-  }
-  a img {
-    border: none;
-  }
-  strong {
-    font-weight: normal;
-  }
-  i{
-    font-style: normal;
-  }
+* {
+	margin: 0;
+	padding: 0;
+}
 
-  *{box-sizing:border-box;}
+html {
+	font-size: 16px;
+}
 
-  body{
+body {
+	font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
+		"メイリオ", Meiryo, sans-serif;
+}
 
-   background-color: #fff;
-   width: 100%;
+header, footer, nav, menu, article, aside, section, details, figcaption,
+	figure {
+	display: block;
+}
 
+ul, ol {
+	list-style: none;
+}
 
+table {
+	border-collapse: collapse;
+}
 
-  }
+img {
+	vertical-align: bottom;
+}
 
-  header{
+a img {
+	border: none;
+}
 
-    height:70px;
-    width: 100%;
-    background-color: #fff;
-    color: #000;
+strong {
+	font-weight: normal;
+}
 
+i {
+	font-style: normal;
+}
 
-  }
+* {
+	box-sizing: border-box;
+}
 
-  .header-left{
+body {
+	background-color: #fff;
+	width: 100%;
+}
 
-    float: left;
-    padding: 25px;
+header {
+	height: 70px;
+	width: 100%;
+	background-color: #fff;
+	color: #000;
+}
 
+.header-left {
+	float: left;
+	padding: 25px;
+}
 
-  }
+.sub {
+	margin: 0px 10px;
+	padding: 3px 10px;
+	background-color: #fff;
+	border-radius: 4px;
+	color: #000;
+}
 
-  .sub{
+.logo {
+	float: left;
+	width: 90px;
+	height: 65px;
+}
 
-    margin:0px 10px;
-    padding: 3px 10px;
-    background-color:#fff;
-    border-radius:4px;
-    color: #000;
+.header-space {
+	margin: 0px 5px;
+}
 
-  }
+.header-right {
+	float: right;
+	padding: 25px;
+	margin-right: 5px;
+}
 
-  .logo{
+.container {
+	padding: 100px 20px;
+	width: 1200px;
+	margin: 0 auto;
+	height: 1800px;
+}
 
-   float: left;
-   width: 90px;
-   height: 65px;
-   
+a {
+	text-decoration: none;
+	color: #000;
+}
 
+a:hover {
+	text-decoration: underline;
+}
 
-  }
-  
-  .header-space{
-  
-    margin:0px 5px;
-  
-  }
-
-  .header-right{
-
-   float: right;
-   padding: 25px;
-   margin-right: 5px;
-
-
-  }
-
-  .container{
-  
-    padding: 100px 20px;
-    width: 1200px;
-    margin: 0 auto;
-    height: 1800px;
- 
- 
-   }
-
-   a{
-
-   text-decoration: none;
-   color: #000;
-
-
-   }
-
-   a:hover{
-
-   text-decoration: underline;
-
-
-   }
-   
-   footer{
-
-    height:100px;
-    width: 100%;
-    background-color: #fff;
-    padding-top: 30px;
-
+footer {
+	height: 100px;
+	width: 100%;
+	background-color: #fff;
+	padding-top: 30px;
 }
 
 .footer-left{
 
-  float: left;
-  
-  
+    float: left;
+    margin:50px 0px 0px 40px; 
 
+  }
+
+.footer-center {
+	padding-top: 100px;
+	padding-right: 30px;
 }
 
-.footer-center{
-
-  padding-top:100px;
-  padding-right:30px ;
- 
-
-
+.footer-center p {
+	text-align: center;
+	font-size: 8px;
 }
 
-.footer-center p{
-
-  text-align: center;
-  font-size: 8px;
-  
-
+.input {
+	margin: 20px;
+	padding: 20px;
 }
 
-.input{
-
-  margin: 20px;
-  padding:20px;
-
-
+.footer-right {
+	float: right;
 }
 
-.footer-right{
-
- float: right; 
- 
-
-
+.icon-wrapper {
+	
 }
 
-.icon-wrapper{
-
-  
-
+.fab {
+	padding-top: 20px;
+	padding-right: 15px;
+	margin: 20px;
+	font-size: 30px;
+	color: #000;
 }
 
-
-
-.fab{
-  
- padding-top: 20px;
- padding-right:15px;
- margin: 20px;
- font-size:30px ;
- color: #000;
-
+.footer-line {
+	height: 50px;
+	background-color: #fff;
 }
 
-.footer-line{
-
-  height:50px;
-  background-color: #fff;
-
-
-}
-
-img:hover{
-
- opacity:0.7;
-
-
+img:hover {
+	opacity: 0.7;
 }
 
 .t {
-  
-  width:700px;
-  height:750px;
-
-
+	width: 700px;
+	height: 750px;
 }
 
-.container{
-
-  width:1200px;
-  height:4000px;
-
-
-
+.container {
+	width: 1200px;
+	height: 4000px;
 }
 
-.top-wrapper{
- 
-  position:relative;
-  padding-top:0px;
-  height:3800px;
-
-} 
-
-.main-left{
-
-  position: absolute;
-  top:0px;
-  bottom:200px;
-
-
+.top-wrapper {
+	position: relative;
+	padding-top: 0px;
+	height: 3800px;
 }
 
-
-.main-right{
-
-  position: sticky;
-  left:800px;
-  top:200px;
-  text-align: left;
-  float: right;
-  font-size:13px;
-  z-index:5;
-  padding-bottom:100px;
-  padding-right:50px;
-
+.main-left {
+	position: absolute;
+	top: 0px;
+	bottom: 200px;
 }
 
-.small{
-  
-  float: left;
-  width:80px;
-  height:90px;
-
-
-
+.main-right {
+	position: sticky;
+	left: 800px;
+	top: 200px;
+	text-align: left;
+	float: right;
+	font-size: 13px;
+	z-index: 5;
+	padding-bottom: 100px;
+	padding-right: 50px;
 }
 
-.btn-wrapper{
-
-  padding:10px 0;
-
+.small {
+	float: left;
+	width: 80px;
+	height: 90px;
 }
 
-.btn{
-
-  padding:5px 10px;
-  background-color:rgb(68, 155, 68);
-  display: inline-block;
-  font-size:15px;
-
+.btn-wrapper {
+	padding: 10px 0;
 }
 
-.quan{
-
-  display: inline-block;
-
+.btn {
+	padding: 5px 10px;
+	background-color: rgb(68, 155, 68);
+	display: inline-block;
+	font-size: 15px;
 }
 
-.output-box{
-
-   padding:5px 10px;
-   margin:5px 0;
-   border:double 5px #cccccc;
-
+.quan {
+	display: inline-block;
 }
 
-.small-wrapper{
- 
-  padding:5px 0 0 10px;
-
+.output-box {
+	padding: 5px 10px;
+	margin: 5px 0;
+	border: double 5px #cccccc;
 }
 
-.size-wrapper{
-
-  margin-top:120px;
-  
-
-
+.small-wrapper {
+	padding: 5px 0 0 10px;
 }
 
-
-.size{
-
- border:2px solid grey;
- margin-bottom:5px;
- margin-right:5px;
- padding:5px;
-
-
+.size-wrapper {
+	margin-top: 120px;
 }
 
-.vanish{
+.size {
+	border: 2px solid grey;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	padding: 5px;
+}
 
-   display:none;
+.vanish {
+	display: none;
 }
 
 .size {
@@ -372,171 +291,223 @@ img:hover{
 	padding: 2px;
 	width: 3.75rem;
 }
-
 </style>
 <body>
 
-    <header>
-         
-        <div class="header-logo">
+	<header>
 
-           <form action="../src/UserAllSearch" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form>
+		<div class="header-logo">
 
-           <div class="header-left" style="display:inline-flex">
-            
-	             <form action="#" method="post" class="header-space"><input type="submit" class="reset flat border" id="M" value="RECOMMEND"></form>
-	             <form action="../src/ranking" method="post" class="header-space"><input type="submit" class="reset flat border" id="W" value="RANKING"></form>
-	             <form action="../src/lowPrice" method="post" class="header-space"><input type="submit" class="reset flat border" id="A" value="LOW PRICE"></form>
-	             <form action="../src/highPrice" method="post" class="header-space"><input type="submit" class="reset flat border" id="C"value="HIGH PRICE"></form>
-                 
-           </div>
+			<form action="../src/UserAllSearch"
+				method="post">
+				<input type="image"
+					src="../views/image/T-logo.png" class="logo">
+			</form>
 
-           <div class="header-right" style="display:inline-flex">
+			<div class="header-left"
+				style="display: inline-flex">
 
-　　　　　　　      <form action="../src/keyWord" method="post" class="header-space" style="display:inline-flex">
-					<input type="text" class="#" name="keyword" placeholder="Input any words!">
-					<input type="submit" class="reset flat border up" value="SEARCH">
-				 </form>
-				 <form action="#" method="post" class="header-space"><input type="submit" class="reset flat border" id="map" value="MAP"></form>
-	             <form action="../src/cart" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="SHOPPING CART"></form>
-	             <form action="../views/logout.jsp" method="post" class="header-space"><input type="submit" class="reset flat border" id="bag" value="LOG OUT"></form>
-	             
+				<form action="../src/UserAllSearch" method="post"
+					class="header-space">
+					<input type="submit"
+						class="reset flat border" id="M"
+						value="RECOMMEND">
+				</form>
+				<form action="../src/ranking" method="post"
+					class="header-space">
+					<input type="submit"
+						class="reset flat border" id="W"
+						value="RANKING">
+				</form>
+				<form action="../src/lowPrice" method="post"
+					class="header-space">
+					<input type="submit"
+						class="reset flat border" id="A"
+						value="LOW PRICE">
+				</form>
+				<form action="../src/highPrice" method="post"
+					class="header-space">
+					<input type="submit"
+						class="reset flat border" id="C"
+						value="HIGH PRICE">
+				</form>
 
-           </div>
+			</div>
 
-       </div>
+			<div class="header-right"
+				style="display: inline-flex">
 
-    </header>
+				<form action="../src/keyWord" method="post"
+					class="header-space"
+					style="display: inline-flex">
+					<input type="text" class="#" name="keyword"
+						placeholder="Input any words!"> <input
+						type="submit" class="reset flat border up"
+						value="SEARCH">
+				</form>
+				<form action="#" method="post"
+					class="header-space">
+					<input type="submit"
+						class="reset flat border" id="map"
+						value="MAP">
+				</form>
+				<form action="../src/cart" method="post"
+					class="header-space">
+					<input type="submit"
+						class="reset flat border" id="bag"
+						value="SHOPPING CART">
+				</form>
+				<form action="../views/logout.jsp"
+					method="post" class="header-space">
+					<input type="submit"
+						class="reset flat border" id="bag"
+						value="LOG OUT">
+				</form>
 
 
-    <div class="container">
+			</div>
 
-      <div class="top-wrapper">
+		</div>
 
-        <div class="main-right">
+	</header>
 
-          <p>HAWAIIAN PATTERN SHIRT</p>
-          <br>
-          <p>¥9,480(税込)</p>
-          <div class="small-wrapper">
-            <a onclick="location.href='../views/user-detail.jsp'"><img src="../views/image/t1.jpeg" class="small"></a>
-           <!--  <a onclick="location.href='../views/user-detail-a.jsp'"><img src="../views/image/t1a.jpeg"class="small"></a> -->
-          </div>
-          
-           <form action="../src/cartInsert" method="post" id="wrap">
-          
-          	<div class="size-wrapper">
-          
-          			サイズ: <select name="item_size" class="size">
-						<option value="S">S</option>
-						<option value="M">M</option>
-						<option value="L">L</option>
-						<option value="LL">LL</option>
-					</select>
-					
-					個数: <select name="item_quantity" class="size">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-					</select>
-           
-          	</div>
-　　　　　　　
-          	<div class="btn-wrapper">
-           
-            	<input type="text" class="vanish" name="itemNo" value="T00001">
-            	<input type="submit" class="btn" value="カートに入れる">
-            	
-           </div>
-           
-            </form>
 
-          <!-- <div class="output-box">
+	<div class="container">
+
+		<div class="top-wrapper">
+
+			<div class="main-right">
+
+				<p>HAWAIIAN PATTERN SHIRT</p>
+				<br>
+				<p>¥9,480(税込)</p>
+				<div class="small-wrapper">
+					<a
+						onclick="location.href='../views/user-detail.jsp'"><img
+						src="../views/image/t1.jpeg" class="small"></a>
+					<!--  <a onclick="location.href='../views/user-detail-a.jsp'"><img src="../views/image/t1a.jpeg"class="small"></a> -->
+				</div>
+
+				<form action="../src/cartInsert" method="post"
+					id="wrap">
+
+					<div class="size-wrapper">
+
+						サイズ: <select name="item_size" class="size">
+							<option value="S">S</option>
+							<option value="M">M</option>
+							<option value="L">L</option>
+							<option value="LL">LL</option>
+						</select> 個数: <select name="item_quantity"
+							class="size">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+
+					</div>
+
+					<div class="btn-wrapper">
+
+						<input type="text" class="vanish"
+							name="itemNo" value="T00001"> <input
+							type="submit" class="btn" value="カートに入れる">
+
+					</div>
+
+				</form>
+
+				<!-- <div class="output-box">
           <p id="output"></p>
           <p id="total">
           </div> -->
-     
-          <p>100% レーヨン</p>
-          <p>インポート</p>
-          <br>
-          <p>着用サイズ: M</p>
-          <p>モデル: 身長182cm, 胸囲91cm, ウエスト78cm, 股下</p>
-          <p>81cm</p>
-          <br>
-          <p>*必ずサイズガイドをご確認ください。</p>
-          <br>
-          <a href="#" class="guide">> FIT DETAIL</a>
-          <br>
-          <a href="#" class="guide">> FIT GUIDE</a>
-          <br>
-          <a href="#" class="guide">> 再入荷リクエストについて</a>
 
-        </div>
+				<p>100% レーヨン</p>
+				<p>インポート</p>
+				<br>
+				<p>着用サイズ: M</p>
+				<p>モデル: 身長182cm, 胸囲91cm, ウエスト78cm, 股下</p>
+				<p>81cm</p>
+				<br>
+				<p>*必ずサイズガイドをご確認ください。</p>
+				<br> <a href="#" class="guide">> FIT
+					DETAIL</a> <br> <a href="#" class="guide">>
+					FIT GUIDE</a> <br> <a href="#" class="guide">>
+					再入荷リクエストについて</a>
 
-        <div class="main-left">
+			</div>
 
-          <img src="../views/image/t1.jpeg" class="t">
-          <img src="../views/image/t1-1.jpeg" class="t">
-          <img src="../views/image/t1-2.jpeg" class="t">
-          <img src="../views/image/t1-3.jpeg" class="t">
-          <img src="../views/image/t1-4.jpeg" class="t">
-          
-        </div>
-        
-      </div>
+			<div class="main-left">
 
-    </div>
+				<img src="../views/image/t1.jpeg" class="t">
+				<img src="../views/image/t1-1.jpeg" class="t">
+				<img src="../views/image/t1-2.jpeg" class="t">
+				<img src="../views/image/t1-3.jpeg" class="t">
+				<img src="../views/image/t1-4.jpeg" class="t">
 
-    <footer>
+			</div>
 
-        <div class="footer-logo">
-    
-          <div class="footer-left">
-              
-            <!-- <input type="text" placeholder="NEW SIGNUP" class="input"> -->
-    
-            <!--a href="#" class="sub">MEN'S</!--a>
+		</div>
+
+	</div>
+
+	<footer>
+
+		<div class="footer-logo">
+
+			<div class="footer-left">
+
+
+				ようこそ${loginBean.name}さん
+
+
+				<!-- <input type="text" placeholder="NEW SIGNUP" class="input"> -->
+
+				<!--a href="#" class="sub">MEN'S</!--a>
             <a href="#" class="sub">WOMEN'S</a>
             <a href="#" class="sub">ACCESSORIES</a>
             <a-- href="#" class="sub">COLLECTIONS</a-->
-    
-          </div>
-    
-          <div class="footer-right">
-    
-            <div class="icon-wrapper">
-      
-              <a href="https://www.apple.com/jp/apple-pay/"><i class="fab fa-apple-pay"></i></a>
-              <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-              <a href="https://twitter.com/i/flow/signup"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.instagram.com/accounts/emailsignup/?hl=en"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>     
-      
-            </div>
-      
-          </div>
-    
-          <div class="footer-center">
-    
-            <p>©︎　2021 WEAR HOUSE</p>
-    
-          </div>
-    
-       </div>  
-    
-    </footer>
-    
-       <div class="footer-line">
-    
-       </div>
-    <!-- <script>
+
+			</div>
+
+			<div class="footer-right">
+
+				<div class="icon-wrapper">
+
+					<a href="https://www.apple.com/jp/apple-pay/"><i
+						class="fab fa-apple-pay"></i></a> <a
+						href="https://www.facebook.com/"><i
+						class="fab fa-facebook"></i></a> <a
+						href="https://twitter.com/i/flow/signup"><i
+						class="fab fa-twitter"></i></a> <a
+						href="https://www.instagram.com/accounts/emailsignup/?hl=en"><i
+						class="fab fa-instagram"></i></a> <a
+						href="https://www.youtube.com/account"><i
+						class="fab fa-youtube"></i></a>
+
+				</div>
+
+			</div>
+
+			<div class="footer-center">
+
+				<p>©︎ 2021 WEAR HOUSE</p>
+
+			</div>
+
+		</div>
+
+	</footer>
+
+	<div class="footer-line"></div>
+	<!-- <script>
       'use strict'
 
       function totalPrice(inputInt){
@@ -567,6 +538,6 @@ img:hover{
 
 
     </script> -->
-    
+
 </body>
 </html>

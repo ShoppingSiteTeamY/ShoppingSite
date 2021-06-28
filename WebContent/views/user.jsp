@@ -590,7 +590,7 @@ $(function(){
 
            <div class="header-left" style="display:inline-flex">
             
-	             <form action="#" method="post" class="header-space"><input type="submit" class="reset flat border" id="M" value="RECOMMEND"></form>
+	             <form action="../src/UserAllSearch" method="post" class="header-space"><input type="submit" class="reset flat border" id="M" value="RECOMMEND"></form>
 	             <form action="../src/ranking" method="post" class="header-space"><input type="submit" class="reset flat border" id="W" value="RANKING"></form>
 	             <form action="../src/lowPrice" method="post" class="header-space"><input type="submit" class="reset flat border" id="A" value="LOW PRICE"></form>
 	             <form action="../src/highPrice" method="post" class="header-space"><input type="submit" class="reset flat border" id="C"value="HIGH PRICE"></form>

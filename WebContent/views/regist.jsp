@@ -202,7 +202,6 @@ h1 {
 	cursor: pointer;
 	margin: 15px 5px;
 	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
-	font-family: 'Corben', cursive;
 }
 
 .btn-gradation2 {

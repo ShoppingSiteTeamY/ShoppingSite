@@ -316,7 +316,7 @@ h1 {
 
 	<div class="container">
 
-		<form action="../src/updateSearch" method="post"
+		<form action="../src/updateAuto" method="post"
 			class="form">
 
 			<div class="input-wrapper">
@@ -350,7 +350,7 @@ h1 {
 					class="click btn-gradation2"
 					onclick="location.href='../views/menu.jsp'">戻る</button>
 				<button type="submit"
-					class="click btn-gradation2">変更</button>
+					class="click btn-gradation2">変更確定</button>
 			</div>
 		</form>
 

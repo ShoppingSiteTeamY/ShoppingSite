@@ -123,7 +123,7 @@ label {
 .basket-labels {
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
-	margin-top: 1.625rem;
+	margin-top: 1.625rem
 }
 
 ul {
@@ -481,10 +481,10 @@ li.price:before, li.subtotal:before {
 						<p>色 : <strong><c:out value="${cart.color}" /></strong>
 					</div>
 				</div>
-				<div class="price">¥<c:out value="${cart.price}"/></div>
+				<div class="price">¥ <c:out value="${cart.price}"/></div>
 				<div class="size">
 					
-						<c:out value="${cart.item_size}"/>
+					サイズ: <c:out value="${cart.item_size}"/>
 					
 				</div>
 				<div class="quantity">
@@ -510,7 +510,7 @@ li.price:before, li.subtotal:before {
 
 		<div class="summary-total">
 			<div class="total-title">Total</div>
-			<div class="total-value final-value" id="basket-total">¥<c:out value="${sum_price}"/></div>
+			<div class="total-value final-value" id="basket-total">合計: ¥<c:out value="${sum_price}"/></div>
 		</div>
 		<form action="../src/result" method="post" class="summary-checkout">
 			<input type="submit" class="checkout-cta" value="購入確定画面へ">

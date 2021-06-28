@@ -56,11 +56,16 @@ public class UpdateAuto extends HttpServlet {
 			
 			
 			ItemDAO dao = new ItemDAO();		
-			dao.update(i);
+			int line = dao.update(i);
 			
-			out.println("更新に成功しました。");
-			out.println("<button type=\"button\" class=\"button\" onclick=\"location.href='menu.jsp'\" name=\"back\">戻る</button>");
-			
+			if(line>0) {
+				
+				request.getRequestDispatcher("../views/menu.jsp").forward(request, response);
+				
+			}else {
+	
+				out.println("更新に失敗しました。");
+			}
 
 		} catch (Exception e) {
 

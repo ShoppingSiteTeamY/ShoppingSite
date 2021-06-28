@@ -56,11 +56,13 @@ public class Regist extends HttpServlet {
 			ItemDAO dao = new ItemDAO();
 			int line = dao.insert(i);
 
-			if (line > 0) {
-
-				out.println("登録に成功しました。");
-				out.println("<button type=\"button\" class=\"button\" onclick=\"location.href='menu.jsp'\" name=\"back\">戻る</button>");
-
+			if(line>0) {
+				
+				request.getRequestDispatcher("../views/menu.jsp").forward(request, response);
+				
+			}else {
+	
+				out.println("登録に失敗しました。");
 			}
 
 		} catch (Exception e) {
