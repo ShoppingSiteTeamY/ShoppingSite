@@ -254,7 +254,7 @@ h1{
 	
 	          <!--  <form action="../views/login-error.jsp" method="post"><input type="image" src="../views/image/T-logo.png" class="logo"></form> -->
 	
-	           <div class="header-left">Welcome to ${loginBean.name} !</div>
+	           <div class="header-left">${loginBean.name} welcome!</div>
 	           
 	           <div class="header-center">Management Screen</div>
 	
